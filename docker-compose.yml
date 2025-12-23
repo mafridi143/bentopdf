@@ -1,8 +1,8 @@
 services:
   bentopdf:
-    # simple mode - mafridi143/bentopdf-simple:latest
-    # default mode - mafridi143/bentopdf:latest
-    image: mafridi143/bentopdf-simple:latest
+    # simple mode - ghcr.io/mafridi143/bentopdf-simple:latest
+    # default mode - ghcr.io/mafridi143/bentopdf:latest
+    image: ghcr.io/mafridi143/bentopdf-simple:latest
     container_name: bentopdf
     restart: unless-stopped
     ports:
