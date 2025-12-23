@@ -1,37 +1,44 @@
-# Quick Start: Deploy to Coolify
+# 🎯 Quick Start: ghcr.io + Coolify
 
-## ⚡ 3-Step Setup
+## ⚡ 2-Step Setup (No Docker Hub needed!)
 
-### 1️⃣ Add GitHub Secrets
-Go to: https://github.com/mafridi143/bentopdf/settings/secrets/actions
-
-Add these two secrets:
-```
-DOCKER_USERNAME = mafridi143
-DOCKER_TOKEN = <your-docker-hub-token>
-```
-
-Get token from: https://hub.docker.com/settings/security
-
----
-
-### 2️⃣ Push to Trigger Build
+### 1️⃣ Push Changes
 ```bash
 git add .
-git commit -m "Initial setup for auto-deployment"
+git commit -m "Switch to GitHub Container Registry (ghcr.io)"
 git push origin main
 ```
 
-Wait ~5-10 minutes for build to complete.
+Wait ~5-10 minutes for build to complete.  
 Check: https://github.com/mafridi143/bentopdf/actions
 
 ---
 
-### 3️⃣ Configure Coolify
+### 2️⃣ Make Packages Public (After first build)
+
+1. Go to: https://github.com/mafridi143?tab=packages
+2. Click on each package (`bentopdf` and `bentopdf-simple`)
+3. Package settings → Change visibility → Public
+
+---
+
+## 🐳 Your Images
+
+**Development:**
+- `ghcr.io/mafridi143/bentopdf:edge`
+- `ghcr.io/mafridi143/bentopdf-simple:edge`
+
+**Production (when you tag):**
+- `ghcr.io/mafridi143/bentopdf:latest`
+- `ghcr.io/mafridi143/bentopdf-simple:latest`
+
+---
+
+## 🚀 Coolify Setup
 
 **In Coolify Dashboard:**
 1. New Resource → Docker Image
-2. Image: `mafridi143/bentopdf-simple:edge`
+2. Image: `ghcr.io/mafridi143/bentopdf-simple:edge`
 3. Port: `8080`
 4. Enable: "Watch for new images"
 5. Polling: `60` seconds
@@ -39,35 +46,15 @@ Check: https://github.com/mafridi143/bentopdf/actions
 
 ---
 
-## 🎯 Your Images
-
-After build completes, these will be available:
-
-**Docker Hub:**
-- `mafridi143/bentopdf:edge`
-- `mafridi143/bentopdf-simple:edge`
-
-**GitHub Container Registry:**
-- `ghcr.io/mafridi143/bentopdf:edge`
-- `ghcr.io/mafridi143/bentopdf-simple:edge`
-
----
-
-## 🔄 Auto-Update Flow
+## ✅ Auto-Update Flow
 
 ```
-You push to main
-    ↓
-GitHub Actions builds
-    ↓
-Pushes to Docker Hub
-    ↓
-Coolify detects new image
-    ↓
-Auto-deploys! 🚀
+Push to main → GitHub builds → ghcr.io → Coolify deploys 🚀
 ```
+
+**No secrets needed!** Uses built-in `GITHUB_TOKEN` ✨
 
 ---
 
 ## 📖 Full Guide
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete documentation.
+See [FIX_GITHUB_ACTIONS.md](./FIX_GITHUB_ACTIONS.md)
