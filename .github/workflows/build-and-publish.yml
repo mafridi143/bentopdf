@@ -13,16 +13,6 @@ jobs:
       contents: read
       packages: write
 
-    strategy:
-      matrix:
-        mode:
-          - name: default
-            simple_mode: false
-            suffix: ""
-          - name: simple
-            simple_mode: true
-            suffix: "-simple"
-
     steps:
       - uses: actions/checkout@v4
 
@@ -33,14 +23,14 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Determine tags
         id: meta
         shell: bash
         run: |
-          IMAGE="ghcr.io/${{ github.repository_owner }}/bentopdf${{ matrix.mode.suffix }}"
+          IMAGE="ghcr.io/${{ github.repository_owner }}/bentopdf"
 
           if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
             VERSION="${GITHUB_REF#refs/tags/v}"
@@ -50,13 +40,11 @@ jobs:
             echo "tags=$IMAGE:edge,$IMAGE:sha-$SHORT_SHA" >> $GITHUB_OUTPUT
           fi
 
-      - name: Build & push (${{ matrix.mode.name }})
+      - name: Build & push image
         uses: docker/build-push-action@v6
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          build-args: |
-            SIMPLE_MODE=${{ matrix.mode.simple_mode }}
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
