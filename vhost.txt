@@ -1,0 +1,94 @@
+server {
+  listen 80;
+  listen [::]:80;
+  listen 443 quic;
+  listen 443 ssl;
+  listen [::]:443 quic;
+  listen [::]:443 ssl;
+  
+  http2 on;
+  http3 off;
+
+  {{ssl_certificate_key}}
+  {{ssl_certificate}}
+  
+  server_name bento.zempdf.com;
+  {{root}}
+
+  {{nginx_access_log}}
+  {{nginx_error_log}}
+
+  # CRITICAL: Include system MIME types FIRST, then add WASM
+  # Without this, a standalone types{} block overrides ALL mime types!
+  include /etc/nginx/mime.types;
+  types {
+    application/wasm wasm;
+  }
+
+  # HTTPS Redirect
+  if ($scheme != "https") {
+    rewrite ^ https://$host$request_uri permanent;
+  }
+
+  # Gzip compression
+  gzip on;
+  gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/wasm;
+  gzip_min_length 1000;
+
+  # Essential for BentoPDF (WASM/SharedArrayBuffer Support)
+  add_header Cross-Origin-Opener-Policy "same-origin" always;
+  add_header Cross-Origin-Embedder-Policy "require-corp" always;
+  add_header Cross-Origin-Resource-Policy "same-site" always;
+  add_header alt-svc 'h3=":443"; ma=86400';
+
+  # Security headers
+  add_header X-Frame-Options "SAMEORIGIN" always;
+  add_header X-Content-Type-Options "nosniff" always;
+  add_header X-XSS-Protection "1; mode=block" always;
+
+  index index.html;
+
+  # Serve locale JSON files directly (for i18n)
+  location /locales/ {
+    try_files $uri =404;
+  }
+
+  # Serve assets directory directly  
+  location /assets/ {
+    try_files $uri =404;
+  }
+
+  # Handle language root paths (e.g., /de/, /vi/, /zh/)
+  location ~ ^/(en|de|zh|vi)/?$ {
+    try_files /index.html =404;
+  }
+
+  # Handle language-prefixed tool pages (e.g., /de/edit-pdf)
+  # Strip the language prefix and serve the base HTML file
+  location ~ ^/(en|de|zh|vi)/(.+)$ {
+    set $page $2;
+    try_files /$page /$page.html /index.html;
+  }
+
+  # SPA routing - serve index.html for all routes
+  location / {
+    try_files $uri $uri.html $uri/ /index.html;
+  }
+
+  location ~ /.well-known {
+    auth_basic off;
+    allow all;
+  }
+
+  {{settings}}
+
+  # Cache static assets
+  location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|wasm|json)$ {
+    expires 1y;
+    add_header Cache-Control "public, immutable";
+    # Re-add security headers (location blocks reset headers)
+    add_header Cross-Origin-Opener-Policy "same-origin" always;
+    add_header Cross-Origin-Embedder-Policy "require-corp" always;
+    add_header Cross-Origin-Resource-Policy "same-site" always;
+  }
+}
