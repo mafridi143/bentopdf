@@ -31,5 +31,3 @@ coverage/
 .seo-backup
 vhost.txt
 vhost-docker-proxy.txt
-./vhost.txt
-./vhost-docker-proxy.txt
