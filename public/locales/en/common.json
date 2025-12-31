@@ -54,7 +54,7 @@
     },
     "tools": {
         "title": "Get Started with",
-        "toolsLabel": "Tools",
+        "toolsLabel": "PDF Tools",
         "subtitle": "Click a tool to open the file uploader",
         "searchPlaceholder": "Search for a tool (e.g., 'split', 'organize'...)",
         "backToTools": "Back to Tools",
