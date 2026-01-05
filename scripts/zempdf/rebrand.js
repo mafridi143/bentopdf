@@ -43,15 +43,26 @@ const CONFIG = {
         { from: '@bentopdf', to: '@zempdf' },
     ],
 
+    // Copyright year replacement
+    copyrightReplacements: [
+        { from: '© 2025', to: '© 2026' },
+        { from: '©2025', to: '©2026' },
+    ],
+
     // Patterns to SKIP (preserve these - they are code/repo references)
-    // These are checked per-line, if line matches any, skip brand replacement
     preservePatterns: [
         /github\.com\/alam00000\/bentopdf/,         // GitHub repo links
         /github\.com\/sponsors\/alam00000/,          // GitHub sponsors
         /"name":\s*"bento-pdf"/,                     // package.json name field
-        /bento-pdf@\d+\.\d+\.\d+/,                   // package version strings (like "bento-pdf@1.15.4")
+        /bento-pdf@\d+\.\d+\.\d+/,                   // package version strings
         /@bentopdf\/(gs-wasm|pymupdf-wasm)/,         // npm packages
     ],
+
+    // Hide GitHub stars badges
+    hideGitHubStars: true,
+
+    // Remove licensing links from navigation
+    removeLicensingLinks: true,
 
     // Directories and files to process
     htmlRootDir: path.join(__dirname, '..', '..'),
@@ -68,6 +79,7 @@ const stats = {
     filesProcessed: 0,
     filesModified: 0,
     replacementsTotal: 0,
+    elementsRemoved: 0,
     errors: [],
 };
 
@@ -87,7 +99,6 @@ function shouldPreserveLine(line) {
 
 /**
  * Apply brand replacements to content
- * Preserves GitHub repo links and code references
  */
 function applyReplacements(content, filePath) {
     let modifiedContent = content;
@@ -98,12 +109,22 @@ function applyReplacements(content, filePath) {
     const processedLines = lines.map((line) => {
         let processedLine = line;
 
-        // Skip lines with preserve patterns (GitHub, npm packages, etc.)
+        // Skip lines with preserve patterns
         if (shouldPreserveLine(line)) {
             return processedLine;
         }
 
-        // Apply URL replacements first
+        // Apply copyright year replacements
+        CONFIG.copyrightReplacements.forEach(({ from, to }) => {
+            const regex = new RegExp(escapeRegExp(from), 'g');
+            const matches = processedLine.match(regex);
+            if (matches) {
+                replacementCount += matches.length;
+                processedLine = processedLine.replace(regex, to);
+            }
+        });
+
+        // Apply URL replacements
         CONFIG.urlReplacements.forEach(({ from, to }) => {
             const regex = new RegExp(escapeRegExp(from), 'g');
             const matches = processedLine.match(regex);
@@ -142,20 +163,91 @@ function applyReplacements(content, filePath) {
 }
 
 /**
+ * Remove licensing links and hide GitHub stars from HTML content
+ */
+function removeElements(content, filePath) {
+    let modifiedContent = content;
+    let removedCount = 0;
+
+    // Only apply to HTML files
+    if (!filePath.endsWith('.html')) {
+        return { content: modifiedContent, removedCount };
+    }
+
+    if (CONFIG.removeLicensingLinks) {
+        // Remove licensing links from desktop nav (with nav-link class)
+        const desktopLicensingPattern = /\s*<a href="\/licensing\.html" class="nav-link"[^>]*>[^<]*<\/a>\s*/g;
+        const desktopMatches = modifiedContent.match(desktopLicensingPattern);
+        if (desktopMatches) {
+            modifiedContent = modifiedContent.replace(desktopLicensingPattern, '\n          ');
+            removedCount += desktopMatches.length;
+        }
+
+        // Remove licensing links from mobile nav (with mobile-nav-link class)
+        const mobileLicensingPattern = /\s*<a href="\/licensing\.html" class="mobile-nav-link"[^>]*>[^<]*<\/a>\s*/g;
+        const mobileMatches = modifiedContent.match(mobileLicensingPattern);
+        if (mobileMatches) {
+            modifiedContent = modifiedContent.replace(mobileLicensingPattern, '\n        ');
+            removedCount += mobileMatches.length;
+        }
+
+        // Remove licensing links from footer (wrapped in <li>)
+        const footerLicensingPattern = /\s*<li>\s*<a href="\/licensing\.html"[^>]*>[^<]*<\/a>\s*<\/li>\s*/g;
+        const footerMatches = modifiedContent.match(footerLicensingPattern);
+        if (footerMatches) {
+            modifiedContent = modifiedContent.replace(footerLicensingPattern, '\n');
+            removedCount += footerMatches.length;
+        }
+    }
+
+    // Hide GitHub stars badges by commenting them out
+    if (CONFIG.hideGitHubStars) {
+        // Desktop GitHub stars badge (entire <a> element with github link and stars)
+        const desktopStarsPattern = /(\s*)<a href="https:\/\/github\.com\/alam00000\/bentopdf\/"[^>]*>[\s\S]*?<span id="github-stars-desktop">[\s\S]*?<\/a>/g;
+        const desktopStarsMatches = modifiedContent.match(desktopStarsPattern);
+        if (desktopStarsMatches) {
+            modifiedContent = modifiedContent.replace(desktopStarsPattern, '$1<!-- GitHub stars badge hidden by ZemPDF rebrand -->');
+            removedCount += desktopStarsMatches.length;
+        }
+
+        // Mobile GitHub stars badge
+        const mobileStarsPattern = /(\s*)<a href="https:\/\/github\.com\/alam00000\/bentopdf\/"[^>]*>[\s\S]*?<span id="github-stars-mobile">[\s\S]*?<\/a>/g;
+        const mobileStarsMatches = modifiedContent.match(mobileStarsPattern);
+        if (mobileStarsMatches) {
+            modifiedContent = modifiedContent.replace(mobileStarsPattern, '$1<!-- GitHub stars badge hidden by ZemPDF rebrand -->');
+            removedCount += mobileStarsMatches.length;
+        }
+    }
+
+    return { content: modifiedContent, removedCount };
+}
+
+/**
  * Process a single file
  */
 function processFile(filePath) {
     try {
         const content = fs.readFileSync(filePath, 'utf8');
-        const { content: modifiedContent, replacementCount } = applyReplacements(content, filePath);
+
+        // Apply brand replacements
+        const { content: brandedContent, replacementCount } = applyReplacements(content, filePath);
+
+        // Remove/hide elements (only for HTML)
+        const { content: finalContent, removedCount } = removeElements(brandedContent, filePath);
 
         stats.filesProcessed++;
 
-        if (modifiedContent !== content) {
-            fs.writeFileSync(filePath, modifiedContent, 'utf8');
+        if (finalContent !== content) {
+            fs.writeFileSync(filePath, finalContent, 'utf8');
             stats.filesModified++;
             stats.replacementsTotal += replacementCount;
-            console.log(`  ✓ Modified: ${path.relative(CONFIG.htmlRootDir, filePath)} (${replacementCount} replacements)`);
+            stats.elementsRemoved += removedCount;
+
+            const changes = [];
+            if (replacementCount > 0) changes.push(`${replacementCount} replacements`);
+            if (removedCount > 0) changes.push(`${removedCount} elements removed`);
+
+            console.log(`  ✓ Modified: ${path.relative(CONFIG.htmlRootDir, filePath)} (${changes.join(', ')})`);
         } else {
             console.log(`  - Skipped:  ${path.relative(CONFIG.htmlRootDir, filePath)} (no changes needed)`);
         }
@@ -201,8 +293,9 @@ function rebrand() {
     console.log('\n╔════════════════════════════════════════════════════════════════╗');
     console.log('║              ZemPDF Rebranding Script                          ║');
     console.log('╠════════════════════════════════════════════════════════════════╣');
-    console.log('║  Replacing: BentoPDF → ZemPDF                                  ║');
-    console.log('║  Preserves: GitHub repo links, npm package names               ║');
+    console.log('║  Replacing: BentoPDF → ZemPDF, © 2025 → © 2026                 ║');
+    console.log('║  Removing:  Licensing links, GitHub stars badges              ║');
+    console.log('║  Preserves: GitHub repo links, npm package names              ║');
     console.log('╚════════════════════════════════════════════════════════════════╝\n');
 
     // Process root HTML files
@@ -227,6 +320,7 @@ function rebrand() {
     console.log(`║  Files processed:    ${String(stats.filesProcessed).padEnd(41)}║`);
     console.log(`║  Files modified:     ${String(stats.filesModified).padEnd(41)}║`);
     console.log(`║  Total replacements: ${String(stats.replacementsTotal).padEnd(41)}║`);
+    console.log(`║  Elements removed:   ${String(stats.elementsRemoved).padEnd(41)}║`);
 
     if (stats.errors.length > 0) {
         console.log(`║  Errors:             ${String(stats.errors.length).padEnd(41)}║`);
