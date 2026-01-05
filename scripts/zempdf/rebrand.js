@@ -223,7 +223,7 @@ function removeElements(content, filePath) {
 }
 
 /**
- * Add theme manager script to HTML files if not already present
+ * Add theme manager script and theme CSS to HTML files if not already present
  */
 function addThemeManager(content, filePath) {
     // Only apply to HTML files
@@ -234,28 +234,39 @@ function addThemeManager(content, filePath) {
     let modifiedContent = content;
     let added = false;
 
-    // Check if theme manager is already added
-    if (modifiedContent.includes('theme-manager.ts') || modifiedContent.includes('theme-manager.js')) {
-        return { content: modifiedContent, added: false };
+    // Step 1: Add theme manager script
+    if (!modifiedContent.includes('theme-manager.ts') && !modifiedContent.includes('theme-manager.js')) {
+        // Find the first <script type="module"> tag and add theme manager before it
+        const scriptPattern = /(\s*)(<script type="module" src="[^"]*lucide-init[^"]*"><\/script>)/;
+        const match = modifiedContent.match(scriptPattern);
+
+        if (match) {
+            const indent = match[1];
+            const themeScript = `${indent}<script type="module" src="/src/js/utils/theme-manager.ts"></script>\n`;
+            modifiedContent = modifiedContent.replace(scriptPattern, themeScript + match[0]);
+            added = true;
+        } else {
+            // Alternative: look for any script tag and add before it
+            const anyScriptPattern = /(\s*)(<script type="module" src="[^"]*"><\/script>)/;
+            const altMatch = modifiedContent.match(anyScriptPattern);
+            if (altMatch) {
+                const indent = altMatch[1];
+                const themeScript = `${indent}<script type="module" src="/src/js/utils/theme-manager.ts"></script>\n`;
+                modifiedContent = modifiedContent.replace(anyScriptPattern, themeScript + altMatch[0]);
+                added = true;
+            }
+        }
     }
 
-    // Find the first <script type="module"> tag and add theme manager before it
-    const scriptPattern = /(\s*)(<script type="module" src="[^"]*lucide-init[^"]*"><\/script>)/;
-    const match = modifiedContent.match(scriptPattern);
+    // Step 2: Add zempdf-theme.css import after styles.css
+    if (!modifiedContent.includes('zempdf-theme.css')) {
+        // Find styles.css link and add zempdf-theme.css after it
+        const stylesPattern = /(<link[^>]*href="[^"]*styles\.css"[^>]*\/>)/;
+        const stylesMatch = modifiedContent.match(stylesPattern);
 
-    if (match) {
-        const indent = match[1];
-        const themeScript = `${indent}<script type="module" src="/src/js/utils/theme-manager.ts"></script>\n`;
-        modifiedContent = modifiedContent.replace(scriptPattern, themeScript + match[0]);
-        added = true;
-    } else {
-        // Alternative: look for any script tag and add before it
-        const anyScriptPattern = /(\s*)(<script type="module" src="[^"]*"><\/script>)/;
-        const altMatch = modifiedContent.match(anyScriptPattern);
-        if (altMatch) {
-            const indent = altMatch[1];
-            const themeScript = `${indent}<script type="module" src="/src/js/utils/theme-manager.ts"></script>\n`;
-            modifiedContent = modifiedContent.replace(anyScriptPattern, themeScript + altMatch[0]);
+        if (stylesMatch) {
+            const themeCssLink = `\n  <link href="/src/css/zempdf-theme.css" rel="stylesheet" />`;
+            modifiedContent = modifiedContent.replace(stylesPattern, stylesMatch[0] + themeCssLink);
             added = true;
         }
     }

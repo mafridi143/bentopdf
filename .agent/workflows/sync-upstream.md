@@ -48,6 +48,10 @@ npm run rebrand
 This script:
 - Replaces "BentoPDF" with "ZemPDF" in all HTML files
 - Replaces brand names in all locale JSON files
+- Updates copyright year (© 2025 → © 2026)
+- Injects theme-manager.ts script into all pages
+- Injects zempdf-theme.css import into all pages
+- Removes licensing links and GitHub stars badges
 - Preserves GitHub repo links and npm package names
 - Safe to run multiple times (idempotent)
 
@@ -65,9 +69,32 @@ git stash pop
 ### 8. Commit and Push
 ```bash
 git add .
-git commit -m "Sync with upstream v$(node -p "require('./package.json').version") and apply ZemPDF branding"
+git commit -m "Sync with upstream v$(node -p \"require('./package.json').version\") and apply ZemPDF branding"
 git push origin main
 ```
+
+## What Gets Preserved After Upstream Merge
+
+### ✅ Safe from Upstream (YOUR custom files)
+| File | Purpose |
+|------|---------|
+| `scripts/zempdf/rebrand.js` | Rebranding automation script |
+| `src/js/utils/theme-manager.ts` | Light/dark theme toggle |
+| `src/css/zempdf-theme.css` | All light theme CSS overrides |
+| `public/images/zempdf-*.svg` | ZemPDF logo files |
+| `.agent/workflows/sync-upstream.md` | This workflow |
+
+### ⚠️ Overwritten but Auto-restored by `npm run rebrand`
+| File | What rebrand.js fixes |
+|------|----------------------|
+| `index.html` | Brand names, theme imports, licensing removal |
+| `src/pages/*.html` | Same as above for all tool pages |
+| `public/locales/*.json` | Brand name replacements |
+
+### ⚠️ Potentially Overwritten (monitor these)
+| File | Impact |
+|------|--------|
+| `src/css/styles.css` | May have upstream changes - your light theme is SAFE in `zempdf-theme.css` |
 
 ## What the Rebrand Script Does
 
@@ -85,6 +112,15 @@ git push origin main
 | bentopdf.com | zempdf.com |
 | @BentoPDF | @ZemPDF |
 | x.com/BentoPDF | x.com/ZemPDF |
+| © 2025 | © 2026 |
+
+**Injections:**
+- `<script type="module" src="/src/js/utils/theme-manager.ts">` before other scripts
+- `<link href="/src/css/zempdf-theme.css" rel="stylesheet" />` after styles.css
+
+**Removals:**
+- Licensing links from navigation and footer
+- GitHub stars badges (hidden via comment)
 
 **Preserved (not replaced):**
 - GitHub repo links (github.com/alam00000/bentopdf)
@@ -109,3 +145,7 @@ git checkout --theirs .
 git add -A
 git commit -m "Merge upstream/main"
 ```
+
+### Light theme looks broken after merge
+The light theme CSS is in `src/css/zempdf-theme.css` which won't be overwritten.
+Just run `npm run rebrand` to re-inject the CSS import into all HTML files.
