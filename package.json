@@ -31,7 +31,8 @@
     "package": "node scripts/package-dist.js",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "rebrand": "node scripts/zempdf/rebrand.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
