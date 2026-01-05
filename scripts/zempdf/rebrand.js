@@ -223,6 +223,47 @@ function removeElements(content, filePath) {
 }
 
 /**
+ * Add theme manager script to HTML files if not already present
+ */
+function addThemeManager(content, filePath) {
+    // Only apply to HTML files
+    if (!filePath.endsWith('.html')) {
+        return { content, added: false };
+    }
+
+    let modifiedContent = content;
+    let added = false;
+
+    // Check if theme manager is already added
+    if (modifiedContent.includes('theme-manager.ts') || modifiedContent.includes('theme-manager.js')) {
+        return { content: modifiedContent, added: false };
+    }
+
+    // Find the first <script type="module"> tag and add theme manager before it
+    const scriptPattern = /(\s*)(<script type="module" src="[^"]*lucide-init[^"]*"><\/script>)/;
+    const match = modifiedContent.match(scriptPattern);
+
+    if (match) {
+        const indent = match[1];
+        const themeScript = `${indent}<script type="module" src="/src/js/utils/theme-manager.ts"></script>\n`;
+        modifiedContent = modifiedContent.replace(scriptPattern, themeScript + match[0]);
+        added = true;
+    } else {
+        // Alternative: look for any script tag and add before it
+        const anyScriptPattern = /(\s*)(<script type="module" src="[^"]*"><\/script>)/;
+        const altMatch = modifiedContent.match(anyScriptPattern);
+        if (altMatch) {
+            const indent = altMatch[1];
+            const themeScript = `${indent}<script type="module" src="/src/js/utils/theme-manager.ts"></script>\n`;
+            modifiedContent = modifiedContent.replace(anyScriptPattern, themeScript + altMatch[0]);
+            added = true;
+        }
+    }
+
+    return { content: modifiedContent, added };
+}
+
+/**
  * Process a single file
  */
 function processFile(filePath) {
@@ -233,7 +274,10 @@ function processFile(filePath) {
         const { content: brandedContent, replacementCount } = applyReplacements(content, filePath);
 
         // Remove/hide elements (only for HTML)
-        const { content: finalContent, removedCount } = removeElements(brandedContent, filePath);
+        const { content: elementsRemoved, removedCount } = removeElements(brandedContent, filePath);
+
+        // Add theme manager script (only for HTML)
+        const { content: finalContent, added: themeAdded } = addThemeManager(elementsRemoved, filePath);
 
         stats.filesProcessed++;
 
@@ -242,10 +286,12 @@ function processFile(filePath) {
             stats.filesModified++;
             stats.replacementsTotal += replacementCount;
             stats.elementsRemoved += removedCount;
+            if (themeAdded) stats.themeScriptsAdded = (stats.themeScriptsAdded || 0) + 1;
 
             const changes = [];
             if (replacementCount > 0) changes.push(`${replacementCount} replacements`);
             if (removedCount > 0) changes.push(`${removedCount} elements removed`);
+            if (themeAdded) changes.push('theme script added');
 
             console.log(`  ✓ Modified: ${path.relative(CONFIG.htmlRootDir, filePath)} (${changes.join(', ')})`);
         } else {

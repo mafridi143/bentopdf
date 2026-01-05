@@ -1,0 +1,386 @@
+﻿
+> bento-pdf@1.15.4 build
+> tsc && vite build
+
+[Vite] Using local WASM files only
+[36mvite v7.3.0 [32mbuilding client environment for production...[36m[39m
+transforming...
+npm : [33m[plugin vite:resolve] Module "fs" has been externalized for browser 
+compatibility, imported by "C:/Users/Mislam/Local 
+Sites/bentopdf/app/public/node_modules/@neslinesli93/qpdf-wasm/dist/qpdf.js". 
+See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-
+compatibility for more details.[39m
+At line:1 char:1
++ npm run build 2>&1 | Out-File -FilePath "build-log.txt" -Encoding utf ...
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([33m[plugin vi...e details.[39m: 
+   String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[33m[plugin vite:resolve] Module "path" has been externalized for browser 
+compatibility, imported by "C:/Users/Mislam/Local 
+Sites/bentopdf/app/public/node_modules/@neslinesli93/qpdf-wasm/dist/qpdf.js". 
+See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-
+compatibility for more details.[39m
+[33m[plugin vite:resolve] Module "crypto" has been externalized for browser 
+compatibility, imported by "C:/Users/Mislam/Local 
+Sites/bentopdf/app/public/node_modules/@neslinesli93/qpdf-wasm/dist/qpdf.js". 
+See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-
+compatibility for more details.[39m
+[33m[plugin vite:resolve] Module "http" has been externalized for browser 
+compatibility, imported by "C:/Users/Mislam/Local 
+Sites/bentopdf/app/public/node_modules/follow-redirects/index.js". See https://v
+ite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+ for more details.[39m
+[33m[plugin vite:resolve] Module "https" has been externalized for browser 
+compatibility, imported by "C:/Users/Mislam/Local 
+Sites/bentopdf/app/public/node_modules/follow-redirects/index.js". See https://v
+ite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility
+ for more details.[39m
+[33m[plugin vite:resolve] Module "module" has been externalized for browser 
+compatibility, imported by "C:/Users/Mislam/Local 
+Sites/bentopdf/app/public/node_modules/@bentopdf/gs-wasm/assets/gs.js". See http
+s://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatib
+ility for more details.[39m
+[32mΓ£ô[39m 6494 modules transformed.
+[31mΓ£ù[39m Build failed in 32.34s
+
+Γ£¿ [vite-plugin-compression]:algorithm=gzip - compressed file successfully: 
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/background-color.html.gz                                                                  21.36kb / gzip: 5.43kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/bookmark.html.gz                                                                          36.72kb / gzip: 7.64kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/bmp-to-pdf.html.gz                                                                        21.32kb / gzip: 5.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/cbz-to-pdf.html.gz                                                                        21.81kb / gzip: 5.58kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/compare-pdfs.html.gz                                                                      24.95kb / gzip: 6.13kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/compress-pdf.html.gz                                                                      31.67kb / gzip: 6.97kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/combine-single-page.html.gz                                                               23.77kb / gzip: 5.86kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/change-permissions.html.gz                                                                24.81kb / gzip: 5.83kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/contact.html.gz                                                                           12.20kb / gzip: 3.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/crop-pdf.html.gz                                                                          22.71kb / gzip: 5.81kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/csv-to-pdf.html.gz                                                                        21.49kb / gzip: 5.47kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/decrypt-pdf.html.gz                                                                       21.24kb / gzip: 5.47kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/digital-sign-pdf.html.gz                                                                  36.71kb / gzip: 7.26kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/edit-attachments.html.gz                                                                  21.08kb / gzip: 5.39kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/edit-metadata.html.gz                                                                     24.60kb / gzip: 5.84kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/delete-pages.html.gz                                                                      19.48kb / gzip: 5.10kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/edit-pdf.html.gz                                                                          21.00kb / gzip: 5.39kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/divide-pages.html.gz                                                                      22.51kb / gzip: 5.82kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/excel-to-pdf.html.gz                                                                      22.04kb / gzip: 5.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/encrypt-pdf.html.gz                                                                       22.33kb / gzip: 5.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/epub-to-pdf.html.gz                                                                       21.62kb / gzip: 5.48kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-attachments.html.gz                                                               21.43kb / gzip: 5.46kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-images.html.gz                                                                    21.49kb / gzip: 5.42kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/faq.html.gz                                                                               18.04kb / gzip: 5.06kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-pages.html.gz                                                                     21.63kb / gzip: 5.58kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/fb2-to-pdf.html.gz                                                                        21.56kb / gzip: 5.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-tables.html.gz                                                                    22.08kb / gzip: 5.52kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/fix-page-size.html.gz                                                                     25.25kb / gzip: 6.17kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/flatten-pdf.html.gz                                                                       22.30kb / gzip: 5.75kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/form-filler.html.gz                                                                       21.76kb / gzip: 5.73kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/image-to-pdf.html.gz                                                                      22.40kb / gzip: 5.82kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/form-creator.html.gz                                                                      37.89kb / gzip: 7.35kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/invert-colors.html.gz                                                                     21.02kb / gzip: 5.36kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/heic-to-pdf.html.gz                                                                       21.40kb / gzip: 5.49kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/header-footer.html.gz                                                                     24.38kb / gzip: 5.79kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/ghostscript-wasm/gs.js.gz                                                                 37.14kb / gzip: 13.88kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/jpg-to-pdf.html.gz                                                                        22.51kb / gzip: 5.76kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/index.html.gz                                                                             36.01kb / gzip: 8.79kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/json-to-pdf.html.gz                                                                       20.71kb / gzip: 5.37kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/linearize-pdf.html.gz                                                                     22.35kb / gzip: 5.72kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/libreoffice-wasm/soffice.worker.js.gz                                                     3.15kb / gzip: 1.32kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/de/tools.json.gz                                                                  21.57kb / gzip: 5.16kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/de/common.json.gz                                                                 16.74kb / gzip: 5.49kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/licensing.html.gz                                                                         52.28kb / gzip: 8.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/it/common.json.gz                                                                 15.10kb / gzip: 5.23kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/en/common.json.gz                                                                 14.92kb / gzip: 4.81kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/vi/common.json.gz                                                                 18.80kb / gzip: 5.60kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/it/tools.json.gz                                                                  18.92kb / gzip: 4.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/vi/tools.json.gz                                                                  22.59kb / gzip: 5.30kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/zh/common.json.gz                                                                 14.63kb / gzip: 5.42kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/zh/tools.json.gz                                                                  19.29kb / gzip: 5.22kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/mobi-to-pdf.html.gz                                                                       21.58kb / gzip: 5.50kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/merge-pdf.html.gz                                                                         24.74kb / gzip: 6.30kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/en/tools.json.gz                                                                  19.78kb / gzip: 4.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/markdown-to-pdf.html.gz                                                                   18.85kb / gzip: 4.83kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/n-up-pdf.html.gz                                                                          24.10kb / gzip: 6.02kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/odp-to-pdf.html.gz                                                                        21.96kb / gzip: 5.61kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/ocr-pdf.html.gz                                                                           27.59kb / gzip: 7.09kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/odt-to-pdf.html.gz                                                                        21.57kb / gzip: 5.49kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/organize-pdf.html.gz                                                                      19.52kb / gzip: 5.13kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/odg-to-pdf.html.gz                                                                        21.95kb / gzip: 5.60kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/page-dimensions.html.gz                                                                   22.22kb / gzip: 5.64kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/page-numbers.html.gz                                                                      22.92kb / gzip: 5.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/ods-to-pdf.html.gz                                                                        21.96kb / gzip: 5.61kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pages-to-pdf.html.gz                                                                      21.92kb / gzip: 5.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-converter.html.gz                                                                     32.02kb / gzip: 5.73kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-booklet.html.gz                                                                       33.19kb / gzip: 6.71kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-editor.html.gz                                                                        24.69kb / gzip: 5.27kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-multi-tool.html.gz                                                                    17.30kb / gzip: 3.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-bmp.html.gz                                                                        20.97kb / gzip: 5.40kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-layers.html.gz                                                                        26.91kb / gzip: 6.14kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-docx.html.gz                                                                       21.46kb / gzip: 5.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-merge-split.html.gz                                                                   21.36kb / gzip: 4.93kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-excel.html.gz                                                                      20.57kb / gzip: 5.32kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-json.html.gz                                                                       20.39kb / gzip: 5.26kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-security.html.gz                                                                      20.68kb / gzip: 4.83kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-jpg.html.gz                                                                        22.15kb / gzip: 5.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-pdfa.html.gz                                                                       21.77kb / gzip: 5.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-csv.html.gz                                                                        20.43kb / gzip: 5.31kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-greyscale.html.gz                                                                  21.02kb / gzip: 5.35kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-png.html.gz                                                                        21.52kb / gzip: 5.58kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-svg.html.gz                                                                        21.63kb / gzip: 5.55kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-markdown.html.gz                                                                   18.38kb / gzip: 4.32kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-text.html.gz                                                                       22.26kb / gzip: 5.71kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-tiff.html.gz                                                                       20.88kb / gzip: 5.41kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-zip.html.gz                                                                        21.42kb / gzip: 5.53kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-webp.html.gz                                                                       21.56kb / gzip: 5.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/locale/locale.json.gz                                         2.44kb / gzip: 0.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/locale/locale.json.gz                                                        2.46kb / gzip: 0.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/viewer.html.gz                                                32.47kb / gzip: 5.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/form-viewer.html.gz                                                          10.08kb / gzip: 2.84kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/sign-viewer.html.gz                                                          11.02kb / gzip: 3.16kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/posterize-pdf.html.gz                                                                     31.18kb / gzip: 6.53kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/png-to-pdf.html.gz                                                                        22.42kb / gzip: 5.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/powerpoint-to-pdf.html.gz                                                                 22.16kb / gzip: 5.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/psd-to-pdf.html.gz                                                                        21.29kb / gzip: 5.47kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/prepare-pdf-for-ai.html.gz                                                                21.70kb / gzip: 5.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/privacy.html.gz                                                                           16.14kb / gzip: 5.18kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pub-to-pdf.html.gz                                                                        21.78kb / gzip: 5.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-annotations.html.gz                                                                21.22kb / gzip: 5.37kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rasterize-pdf.html.gz                                                                     22.33kb / gzip: 5.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/viewer.html.gz                                                               52.71kb / gzip: 6.75kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-blank-pages.html.gz                                                                22.14kb / gzip: 5.62kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pymupdf-wasm/pyodide.js.gz                                                                14.34kb / gzip: 5.75kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-restrictions.html.gz                                                               22.08kb / gzip: 5.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-metadata.html.gz                                                                   21.54kb / gzip: 5.54kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rtf-to-pdf.html.gz                                                                        21.57kb / gzip: 5.48kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/repair-pdf.html.gz                                                                        22.08kb / gzip: 5.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/reverse-pages.html.gz                                                                     21.99kb / gzip: 5.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/sign-pdf.html.gz                                                                          21.59kb / gzip: 5.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rotate-pdf.html.gz                                                                        22.01kb / gzip: 5.62kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rotate-custom.html.gz                                                                     21.69kb / gzip: 5.53kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/sw.js.gz                                                                                  10.83kb / gzip: 2.88kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/sanitize-pdf.html.gz                                                                      24.87kb / gzip: 5.77kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/table-of-contents.html.gz                                                                 23.35kb / gzip: 5.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/svg-to-pdf.html.gz                                                                        22.39kb / gzip: 5.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/split-pdf.html.gz                                                                         32.21kb / gzip: 6.85kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/tiff-to-pdf.html.gz                                                                       21.46kb / gzip: 5.47kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/terms.html.gz                                                                             17.84kb / gzip: 5.75kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/tools.html.gz                                                                             7.19kb / gzip: 2.04kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/text-color.html.gz                                                                        21.18kb / gzip: 5.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/vsd-to-pdf.html.gz                                                                        21.80kb / gzip: 5.61kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/add-attachments.worker.js.gz                                                      4.20kb / gzip: 1.36kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/view-metadata.html.gz                                                                     21.23kb / gzip: 5.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/txt-to-pdf.html.gz                                                                        26.55kb / gzip: 6.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/alternate-merge.worker.js.gz                                                      1.97kb / gzip: 0.73kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/edit-attachments.worker.js.gz                                                     4.54kb / gzip: 1.10kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/merge.worker.js.gz                                                                2.36kb / gzip: 0.79kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/webp-to-pdf.html.gz                                                                       22.41kb / gzip: 5.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/json-to-pdf.worker.js.gz                                                          1.68kb / gzip: 0.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/word-to-pdf.html.gz                                                                       22.88kb / gzip: 5.81kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/extract-attachments.worker.js.gz                                                  3.24kb / gzip: 1.04kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/pdf-to-json.worker.js.gz                                                          1.46kb / gzip: 0.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/wps-to-pdf.html.gz                                                                        21.86kb / gzip: 5.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/table-of-contents.worker.js.gz                                                    1.63kb / gzip: 0.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/wpd-to-pdf.html.gz                                                                        21.86kb / gzip: 5.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/xml-to-pdf.html.gz                                                                        21.52kb / gzip: 5.50kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/xps-to-pdf.html.gz                                                                        21.57kb / gzip: 5.50kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/libreoffice-wasm/browser.worker.global.js.gz                                              106.60kb / gzip: 24.11kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/pdfjs-annotation-extension-testdata.json.gz                       57.78kb / gzip: 20.25kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/viewer.css.gz                                                 122.14kb / gzip: 16.86kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf_viewer.css.gz                                                            200.48kb / gzip: 23.19kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/viewer.css.gz                                                                257.99kb / gzip: 30.95kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pymupdf-wasm/pyodide-lock.json.gz                                                         102.78kb / gzip: 22.97kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf_viewer.mjs.gz                                                            296.13kb / gzip: 65.32kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/libreoffice-wasm/soffice.js.gz                                                            433.67kb / gzip: 85.92kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/viewer.mjs.gz                                                 451.14kb / gzip: 93.30kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/wasm/openjpeg_nowasm_fallback.js.gz                                          441.21kb / gzip: 114.03kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/build/pdf.mjs.gz                                                  607.15kb / gzip: 120.14kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/viewer.mjs.gz                                                                583.79kb / gzip: 119.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf.mjs.gz                                                                   792.46kb / gzip: 156.12kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pymupdf-wasm/pyodide.asm.js.gz                                                            985.35kb / gzip: 208.50kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/build/pdf.sandbox.mjs.gz                                          708.67kb / gzip: 288.83kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf.sandbox.mjs.gz                                                           711.69kb / gzip: 289.46kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf.worker.mjs.gz                                                            1918.98kb / gzip: 366.29kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/build/pdf.worker.mjs.gz                                           2167.46kb / gzip: 460.89kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/coherentpdf.browser.min.js.gz                                                             1294.01kb / gzip: 510.01kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/pdfjs-annotation-extension/pdfjs-annotation-extension.js.gz   3889.54kb / gzip: 1564.94kb
+
+
+
+Γ£¿ [vite-plugin-compression]:algorithm=brotliCompress - compressed file successfully: 
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/background-color.html.br                                                                  21.36kb / brotliCompress: 4.50kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/cbz-to-pdf.html.br                                                                        21.81kb / brotliCompress: 4.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/change-permissions.html.br                                                                24.81kb / brotliCompress: 4.84kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/bmp-to-pdf.html.br                                                                        21.32kb / brotliCompress: 4.52kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/combine-single-page.html.br                                                               23.77kb / brotliCompress: 4.88kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/bookmark.html.br                                                                          36.72kb / brotliCompress: 6.38kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/compare-pdfs.html.br                                                                      24.95kb / brotliCompress: 5.11kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/delete-pages.html.br                                                                      19.48kb / brotliCompress: 4.21kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/compress-pdf.html.br                                                                      31.67kb / brotliCompress: 5.79kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/crop-pdf.html.br                                                                          22.71kb / brotliCompress: 4.85kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/contact.html.br                                                                           12.20kb / brotliCompress: 2.99kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/csv-to-pdf.html.br                                                                        21.49kb / brotliCompress: 4.54kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/decrypt-pdf.html.br                                                                       21.24kb / brotliCompress: 4.54kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/edit-attachments.html.br                                                                  21.08kb / brotliCompress: 4.46kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/digital-sign-pdf.html.br                                                                  36.71kb / brotliCompress: 6.03kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/divide-pages.html.br                                                                      22.51kb / brotliCompress: 4.82kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/encrypt-pdf.html.br                                                                       22.33kb / brotliCompress: 4.72kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/epub-to-pdf.html.br                                                                       21.62kb / brotliCompress: 4.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/edit-metadata.html.br                                                                     24.60kb / brotliCompress: 4.83kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-attachments.html.br                                                               21.43kb / brotliCompress: 4.54kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-tables.html.br                                                                    22.08kb / brotliCompress: 4.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-images.html.br                                                                    21.49kb / brotliCompress: 4.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/excel-to-pdf.html.br                                                                      22.04kb / brotliCompress: 4.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/edit-pdf.html.br                                                                          21.00kb / brotliCompress: 4.46kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/extract-pages.html.br                                                                     21.63kb / brotliCompress: 4.62kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/faq.html.br                                                                               18.04kb / brotliCompress: 4.05kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/form-filler.html.br                                                                       21.76kb / brotliCompress: 4.75kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/flatten-pdf.html.br                                                                       22.30kb / brotliCompress: 4.78kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/fb2-to-pdf.html.br                                                                        21.56kb / brotliCompress: 4.58kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/heic-to-pdf.html.br                                                                       21.40kb / brotliCompress: 4.55kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/fix-page-size.html.br                                                                     25.25kb / brotliCompress: 5.14kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/form-creator.html.br                                                                      37.89kb / brotliCompress: 6.12kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/header-footer.html.br                                                                     24.38kb / brotliCompress: 4.80kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/image-to-pdf.html.br                                                                      22.40kb / brotliCompress: 4.83kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/invert-colors.html.br                                                                     21.02kb / brotliCompress: 4.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/ghostscript-wasm/gs.js.br                                                                 37.14kb / brotliCompress: 12.42kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/jpg-to-pdf.html.br                                                                        22.51kb / brotliCompress: 4.78kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/index.html.br                                                                             36.01kb / brotliCompress: 7.30kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/libreoffice-wasm/soffice.worker.js.br                                                     3.15kb / brotliCompress: 1.17kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/linearize-pdf.html.br                                                                     22.35kb / brotliCompress: 4.77kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/json-to-pdf.html.br                                                                       20.71kb / brotliCompress: 4.42kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/de/common.json.br                                                                 16.74kb / brotliCompress: 5.00kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/de/tools.json.br                                                                  21.57kb / brotliCompress: 4.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/it/common.json.br                                                                 15.10kb / brotliCompress: 4.72kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/en/common.json.br                                                                 14.92kb / brotliCompress: 3.92kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/licensing.html.br                                                                         52.28kb / brotliCompress: 6.99kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/en/tools.json.br                                                                  19.78kb / brotliCompress: 3.92kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/vi/common.json.br                                                                 18.80kb / brotliCompress: 4.99kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/it/tools.json.br                                                                  18.92kb / brotliCompress: 4.02kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/vi/tools.json.br                                                                  22.59kb / brotliCompress: 4.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/zh/common.json.br                                                                 14.63kb / brotliCompress: 4.23kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/markdown-to-pdf.html.br                                                                   18.85kb / brotliCompress: 3.99kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/locales/zh/tools.json.br                                                                  19.29kb / brotliCompress: 4.15kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/merge-pdf.html.br                                                                         24.74kb / brotliCompress: 5.26kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/n-up-pdf.html.br                                                                          24.10kb / brotliCompress: 5.01kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/mobi-to-pdf.html.br                                                                       21.58kb / brotliCompress: 4.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/odp-to-pdf.html.br                                                                        21.96kb / brotliCompress: 4.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/ocr-pdf.html.br                                                                           27.59kb / brotliCompress: 5.84kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/odg-to-pdf.html.br                                                                        21.95kb / brotliCompress: 4.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/ods-to-pdf.html.br                                                                        21.96kb / brotliCompress: 4.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/page-dimensions.html.br                                                                   22.22kb / brotliCompress: 4.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/odt-to-pdf.html.br                                                                        21.57kb / brotliCompress: 4.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/organize-pdf.html.br                                                                      19.52kb / brotliCompress: 4.24kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pages-to-pdf.html.br                                                                      21.92kb / brotliCompress: 4.64kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/page-numbers.html.br                                                                      22.92kb / brotliCompress: 4.73kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-multi-tool.html.br                                                                    17.30kb / brotliCompress: 3.00kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-layers.html.br                                                                        26.91kb / brotliCompress: 5.12kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-booklet.html.br                                                                       33.19kb / brotliCompress: 5.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-merge-split.html.br                                                                   21.36kb / brotliCompress: 4.03kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-csv.html.br                                                                        20.43kb / brotliCompress: 4.41kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-docx.html.br                                                                       21.46kb / brotliCompress: 4.53kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-converter.html.br                                                                     32.02kb / brotliCompress: 4.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-bmp.html.br                                                                        20.97kb / brotliCompress: 4.49kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-security.html.br                                                                      20.68kb / brotliCompress: 3.94kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-editor.html.br                                                                        24.69kb / brotliCompress: 4.32kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-json.html.br                                                                       20.39kb / brotliCompress: 4.35kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-greyscale.html.br                                                                  21.02kb / brotliCompress: 4.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-jpg.html.br                                                                        22.15kb / brotliCompress: 4.73kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-markdown.html.br                                                                   18.38kb / brotliCompress: 3.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-svg.html.br                                                                        21.63kb / brotliCompress: 4.62kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-tiff.html.br                                                                       20.88kb / brotliCompress: 4.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-webp.html.br                                                                       21.56kb / brotliCompress: 4.62kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-text.html.br                                                                       22.26kb / brotliCompress: 4.74kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/locale/locale.json.br                                         2.44kb / brotliCompress: 0.47kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-pdfa.html.br                                                                       21.77kb / brotliCompress: 4.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-excel.html.br                                                                      20.57kb / brotliCompress: 4.41kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-zip.html.br                                                                        21.42kb / brotliCompress: 4.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdf-to-png.html.br                                                                        21.52kb / brotliCompress: 4.64kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/form-viewer.html.br                                                          10.08kb / brotliCompress: 2.28kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/locale/locale.json.br                                                        2.46kb / brotliCompress: 0.48kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/viewer.html.br                                                32.47kb / brotliCompress: 4.61kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/sign-viewer.html.br                                                          11.02kb / brotliCompress: 2.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/viewer.css.br                                                 122.14kb / brotliCompress: 14.36kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/png-to-pdf.html.br                                                                        22.42kb / brotliCompress: 4.72kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/viewer.html.br                                                               52.71kb / brotliCompress: 5.60kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/privacy.html.br                                                                           16.14kb / brotliCompress: 4.11kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/prepare-pdf-for-ai.html.br                                                                21.70kb / brotliCompress: 4.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/posterize-pdf.html.br                                                                     31.18kb / brotliCompress: 5.44kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/powerpoint-to-pdf.html.br                                                                 22.16kb / brotliCompress: 4.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/psd-to-pdf.html.br                                                                        21.29kb / brotliCompress: 4.54kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pub-to-pdf.html.br                                                                        21.78kb / brotliCompress: 4.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rasterize-pdf.html.br                                                                     22.33kb / brotliCompress: 4.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-metadata.html.br                                                                   21.54kb / brotliCompress: 4.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-annotations.html.br                                                                21.22kb / brotliCompress: 4.45kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pymupdf-wasm/pyodide.js.br                                                                14.34kb / brotliCompress: 5.20kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-restrictions.html.br                                                               22.08kb / brotliCompress: 4.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/remove-blank-pages.html.br                                                                22.14kb / brotliCompress: 4.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/reverse-pages.html.br                                                                     21.99kb / brotliCompress: 4.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rotate-custom.html.br                                                                     21.69kb / brotliCompress: 4.59kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/repair-pdf.html.br                                                                        22.08kb / brotliCompress: 4.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rotate-pdf.html.br                                                                        22.01kb / brotliCompress: 4.66kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/rtf-to-pdf.html.br                                                                        21.57kb / brotliCompress: 4.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/sanitize-pdf.html.br                                                                      24.87kb / brotliCompress: 4.80kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/table-of-contents.html.br                                                                 23.35kb / brotliCompress: 4.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/sign-pdf.html.br                                                                          21.59kb / brotliCompress: 4.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/split-pdf.html.br                                                                         32.21kb / brotliCompress: 5.69kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/text-color.html.br                                                                        21.18kb / brotliCompress: 4.52kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/svg-to-pdf.html.br                                                                        22.39kb / brotliCompress: 4.73kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/sw.js.br                                                                                  10.83kb / brotliCompress: 2.47kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/vsd-to-pdf.html.br                                                                        21.80kb / brotliCompress: 4.68kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/tiff-to-pdf.html.br                                                                       21.46kb / brotliCompress: 4.56kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/tools.html.br                                                                             7.19kb / brotliCompress: 1.62kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/terms.html.br                                                                             17.84kb / brotliCompress: 4.54kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/add-attachments.worker.js.br                                                      4.20kb / brotliCompress: 1.14kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/txt-to-pdf.html.br                                                                        26.55kb / brotliCompress: 5.46kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/view-metadata.html.br                                                                     21.23kb / brotliCompress: 4.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/word-to-pdf.html.br                                                                       22.88kb / brotliCompress: 4.84kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/webp-to-pdf.html.br                                                                       22.41kb / brotliCompress: 4.72kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/extract-attachments.worker.js.br                                                  3.24kb / brotliCompress: 0.87kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/alternate-merge.worker.js.br                                                      1.97kb / brotliCompress: 0.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/merge.worker.js.br                                                                2.36kb / brotliCompress: 0.70kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/pdf-to-json.worker.js.br                                                          1.46kb / brotliCompress: 0.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/edit-attachments.worker.js.br                                                     4.54kb / brotliCompress: 0.94kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/json-to-pdf.worker.js.br                                                          1.68kb / brotliCompress: 0.56kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/workers/table-of-contents.worker.js.br                                                    1.63kb / brotliCompress: 0.53kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/wps-to-pdf.html.br                                                                        21.86kb / brotliCompress: 4.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/xps-to-pdf.html.br                                                                        21.57kb / brotliCompress: 4.58kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/wpd-to-pdf.html.br                                                                        21.86kb / brotliCompress: 4.65kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/xml-to-pdf.html.br                                                                        21.52kb / brotliCompress: 4.57kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/libreoffice-wasm/browser.worker.global.js.br                                              106.60kb / brotliCompress: 20.76kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/pdfjs-annotation-extension-testdata.json.br                       57.78kb / brotliCompress: 18.67kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf_viewer.css.br                                                            200.48kb / brotliCompress: 18.74kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/viewer.css.br                                                                257.99kb / brotliCompress: 25.07kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pymupdf-wasm/pyodide-lock.json.br                                                         102.78kb / brotliCompress: 19.58kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf_viewer.mjs.br                                                            296.13kb / brotliCompress: 53.55kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/viewer.mjs.br                                                 451.14kb / brotliCompress: 74.74kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/libreoffice-wasm/soffice.js.br                                                            433.67kb / brotliCompress: 69.97kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/wasm/openjpeg_nowasm_fallback.js.br                                          441.21kb / brotliCompress: 90.76kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/viewer.mjs.br                                                                583.79kb / brotliCompress: 95.42kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/build/pdf.mjs.br                                                  607.15kb / brotliCompress: 96.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf.mjs.br                                                                   792.46kb / brotliCompress: 123.55kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pymupdf-wasm/pyodide.asm.js.br                                                            985.35kb / brotliCompress: 170.44kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/build/pdf.sandbox.mjs.br                                          708.67kb / brotliCompress: 244.90kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf.sandbox.mjs.br                                                           711.69kb / brotliCompress: 245.43kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/coherentpdf.browser.min.js.br                                                             1294.01kb / brotliCompress: 413.63kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-viewer/pdf.worker.mjs.br                                                            1918.98kb / brotliCompress: 285.48kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/build/pdf.worker.mjs.br                                           2167.46kb / brotliCompress: 365.51kb
+dist/C:/Users/Mislam/Local Sites/bentopdf/app/public/pdfjs-annotation-viewer/web/pdfjs-annotation-extension/pdfjs-annotation-extension.js.br   3889.54kb / brotliCompress: 1368.02kb
+
+
+[31merror during build:
+[31m[vite:prepare-out-dir] EPERM: operation not permitted, lstat 
+'C:\Users\Mislam\Local 
+Sites\bentopdf\app\public\dist\assets\lucide-init-Cewy7-j9.js'[31m
+    at lstatSync (node:fs:1642:25)
+    at rimrafSync (node:internal/fs/rimraf:182:13)
+    at node:internal/fs/rimraf:255:9
+    at Array.forEach (<anonymous>)
+    at _rmdirSync (node:internal/fs/rimraf:252:7)
+    at fixWinEPERMSync (node:internal/fs/rimraf:306:5)
+    at rimrafSync (node:internal/fs/rimraf:202:14)
+    at Object.rmSync (node:fs:1264:10)
+    at emptyDir (file:///C:/Users/Mislam/Local%20Sites/bentopdf/app/public/node_
+modules/vite/dist/node/chunks/config.js:2167:11)
+    at prepareOutDir (file:///C:/Users/Mislam/Local%20Sites/bentopdf/app/public/
+node_modules/vite/dist/node/chunks/config.js:33324:55)[39m

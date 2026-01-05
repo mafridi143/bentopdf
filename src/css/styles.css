@@ -17,8 +17,149 @@
 @import 'cropperjs/dist/cropper.css';
 @import 'tailwindcss';
 
-@theme {
+/* ========================================
+   SHADCN-STYLE CSS VARIABLES THEME SYSTEM
+   ======================================== */
+
+:root {
+  /* Font families */
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-dancing: 'Dancing Script', cursive;
+  --font-vibes: 'Great Vibes', cursive;
+  --font-kalam: 'Kalam', cursive;
+  --font-lato: 'Lato', sans-serif;
+  --font-merriweather: 'Merriweather', serif;
+  --font-cedarville: 'Cedarville Cursive', cursive;
+
+  /* Border radius - shadcn style */
+  --radius: 0.5rem;
+}
+
+/* ========================================
+   DARK THEME (Default)
+   ======================================== */
+:root,
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 238.7 83.5% 66.7%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 238.7 83.5% 66.7%;
+
+  /* Semantic colors */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-primary: #374151;
+  --border-secondary: #4b5563;
+
+  /* Brand colors */
+  --brand-primary: #6366f1;
+  --brand-secondary: #8b5cf6;
+  --brand-hover: #4f46e5;
+  --brand-light: #a5b4fc;
+  --brand-lighter: #e0e7ff;
+
+  /* Component colors */
+  --nav-bg: #1f2937;
+  --nav-text: #d1d5db;
+  --nav-hover: #374151;
+  --card-bg: #1f2937;
+  --card-border: #374151;
+  --input-bg: #374151;
+  --input-border: #4b5563;
+  --scrollbar-track: #1f2937;
+  --scrollbar-thumb: #4f46e5;
+}
+
+/* ========================================
+   LIGHT THEME
+   ======================================== */
+.light {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  --primary: 238.7 83.5% 66.7%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 238.7 83.5% 66.7%;
+
+  /* Semantic colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+
+  /* Brand colors remain consistent */
+  --brand-primary: #6366f1;
+  --brand-secondary: #8b5cf6;
+  --brand-hover: #4f46e5;
+  --brand-light: #a5b4fc;
+  --brand-lighter: #e0e7ff;
+
+  /* Component colors */
+  --nav-bg: #ffffff;
+  --nav-text: #374151;
+  --nav-hover: #f3f4f6;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --scrollbar-track: #f3f4f6;
+  --scrollbar-thumb: #6366f1;
+}
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui;
   --font-dancing: 'Dancing Script', cursive;
   --font-vibes: 'Great Vibes', cursive;
   --font-kalam: 'Kalam', cursive;
@@ -34,32 +175,66 @@
   }
 }
 
-@theme {
-  --font-sans: 'DM Sans', ui-sans-serif, system-ui;
-  --font-dancing: 'Dancing Script', cursive;
-  --font-vibes: 'Great Vibes', cursive;
-  --font-kalam: 'Kalam', cursive;
-  --font-lato: 'Lato', sans-serif;
-  --font-merriweather: 'Merriweather', serif;
-  --font-cedarville: 'Cedarville Cursive', cursive;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: #111827;
-  color: #d1d5db;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ========================================
+   NAVIGATION - Theme Aware
+   ======================================== */
+nav {
+  background-color: var(--nav-bg);
+  border-color: var(--border-primary);
+}
+
+.nav-link {
+  color: var(--nav-text);
+  @apply hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors;
+}
+
+.nav-link:hover {
+  background-color: var(--nav-hover);
+}
+
+.light .nav-link {
+  @apply hover:text-gray-900;
+}
+
+.light .nav-link:hover {
+  background-color: var(--nav-hover);
+}
+
+.mobile-nav-link {
+  color: var(--nav-text);
+  @apply block px-3 py-2 rounded-md text-base font-medium transition-colors;
+}
+
+.mobile-nav-link:hover {
+  background-color: var(--nav-hover);
+}
+
+.light .mobile-nav-link:hover {
+  @apply text-gray-900;
+}
+
+/* ========================================
+   CARDS & CONTAINERS - Theme Aware
+   ======================================== */
 .tool-card {
   transition:
     transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
-  border: 1px solid #374151;
-  background-color: #1f2937;
+    box-shadow 0.2s ease-in-out,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 0.5rem;
   display: flex;
@@ -71,11 +246,39 @@ body {
 .tool-card:hover {
   transform: translateY(-5px);
   box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.2),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
-  border-color: #4f46e5;
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: var(--brand-primary);
 }
 
+.light .tool-card:hover {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card {
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--card-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card {
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: 0.75rem;
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ========================================
+   BUTTONS - Theme Aware
+   ======================================== */
 .btn {
   transition:
     background-color 0.2s ease-in-out,
@@ -86,34 +289,85 @@ body {
   transform: scale(0.98);
 }
 
-/* Custom file input */
+.btn-gradient {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to bottom, #6366f1, #4f46e5);
+  color: #ffffff;
+  font-weight: 600;
+  transition-property: all;
+  transition-duration: 200ms;
+  transform: translateY(0);
+}
+
+.btn-gradient:hover {
+  box-shadow:
+    0 10px 15px -3px rgba(79, 70, 229, 0.3),
+    0 4px 6px -4px rgba(79, 70, 229, 0.3);
+}
+
+.btn-gradient:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 2px var(--bg-primary),
+    0 0 0 4px #818cf8;
+}
+
+.btn-gradient:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cta-button {
+  background-color: var(--brand-primary);
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: var(--brand-hover);
+}
+
+/* ========================================
+   INPUTS - Theme Aware
+   ======================================== */
 input[type='file']::file-selector-button {
   @apply bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg cursor-pointer hover:bg-indigo-700 transition-colors duration-200 mr-4;
 }
 
-/* Custom scrollbar */
+/* ========================================
+   SCROLLBAR - Theme Aware
+   ======================================== */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4f46e5;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4338ca;
-  /* indigo-700 */
+  background: var(--brand-hover);
 }
 
-/* Style for drag-and-drop placeholder */
+/* ========================================
+   MISC COMPONENTS - Theme Aware
+   ======================================== */
 .sortable-ghost {
   opacity: 0.4;
-  border: 2px dashed #4f46e5;
+  border: 2px dashed var(--brand-primary);
 }
 
 #embed-pdf-container>div {
@@ -139,12 +393,11 @@ input[type='file']::file-selector-button {
   width: 100%;
   height: 75vh;
   overflow: auto;
-  border: 2px solid #374151;
+  border: 2px solid var(--border-primary);
   border-radius: 0.5rem;
-  background-color: #1f2937;
+  background-color: var(--bg-secondary);
 }
 
-/* This rule now ONLY applies to canvases in overlay mode */
 .compare-viewer-wrapper.overlay-mode canvas {
   position: absolute;
   top: 0;
@@ -164,12 +417,11 @@ input[type='file']::file-selector-button {
   min-width: 0;
   overflow: auto;
   height: 75vh;
-  border: 2px solid #374151;
+  border: 2px solid var(--border-primary);
   border-radius: 0.5rem;
-  background-color: #1f2937;
+  background-color: var(--bg-secondary);
 }
 
-/* This rule ensures canvases in side-by-side panels display at their natural rendered size. */
 .pdf-panel canvas {
   display: block;
   margin: 0 auto;
@@ -190,62 +442,26 @@ footer a {
   bottom: -5px;
   left: 0;
   width: 100%;
-  /* height: 30px; */
   background-color: orange;
-  /* Yellow marker color */
   z-index: -1;
   transform: skew(-20deg);
 }
 
 .pill {
-  background-color: #374151;
-  /* bg-gray-700 */
-  color: #d1d5db;
-  /* text-gray-300 */
-  padding: 8px 16px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  font-size: 12px;
   border-radius: 9999px;
-  /* rounded-full */
-  font-size: 14px;
   font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.cta-button {
-  background-color: #4f46e5;
-  /* indigo-600 */
-  color: white;
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 8px;
-  /* rounded-lg */
-  transition: background-color 0.2s ease-in-out;
-}
-
-.cta-button:hover {
-  background-color: #4338ca;
-  /* indigo-700 */
-}
-
-.marker-text {
-  background-color: rgba(255, 255, 0, 0.5);
-  /* Yellow marker color */
-  padding: 0 5px;
-}
-
-.feature-card {
-  background-color: #1f2937;
-  /* bg-gray-800 */
-  padding: 24px;
-  border-radius: 8px;
-  /* rounded-lg */
-  text-align: center;
-}
-
-.nav-link {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors;
-}
-
-.mobile-nav-link {
-  @apply text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors;
+@media (min-width: 640px) {
+  .pill {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 
 .marker-slanted {
@@ -264,67 +480,19 @@ footer a {
   z-index: -1;
 }
 
-
-
 .section-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, #4d44f7, transparent);
-  /* Fades from transparent to indigo and back */
+  background: linear-gradient(to right, transparent, var(--brand-primary), transparent);
   margin: 2rem auto;
-  /* my-16 */
   max-width: 42rem;
-  /* max-w-xl */
   opacity: 0.5;
-}
-
-.btn-gradient {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  /* py-3 px-8 */
-  border-radius: 0.5rem;
-  /* rounded-lg */
-  background-image: linear-gradient(to bottom, #6366f1, #4f46e5);
-  /* from-indigo-500 to-indigo-600 */
-  color: #ffffff;
-  /* text-white */
-  font-weight: 600;
-  /* font-semibold */
-  transition-property: all;
-  transition-duration: 200ms;
-  transform: translateY(0);
-}
-
-.btn-gradient:hover {
-  box-shadow:
-    0 10px 15px -3px rgba(79, 70, 229, 0.3),
-    0 4px 6px -4px rgba(79, 70, 229, 0.3);
-}
-
-.btn-gradient:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow:
-    0 0 0 2px #111827,
-    0 0 0 4px #818cf8;
-  /* focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-400 */
-}
-
-.btn-gradient:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
 
 .solid-spinner {
   width: 64px;
-  /* w-16 */
   height: 64px;
-  /* h-16 */
-  border: 5px solid #374151;
-  /* border-gray-700 */
-  border-bottom-color: #4f46e5;
-  /* border-indigo-600 */
+  border: 5px solid var(--border-primary);
+  border-bottom-color: var(--brand-primary);
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
@@ -345,20 +513,16 @@ footer a {
   position: absolute;
   z-index: 100;
   pointer-events: none;
-  /* Allows clicks to pass through to the canvas */
   opacity: 0.6;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-/* Highlight for selected signature in the saved list */
 .saved-signature.selected {
-  border-color: #4f46e5;
-  /* indigo-600 */
+  border-color: var(--brand-primary);
   box-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
 }
 
-/* Cursor change when hovering over a placed signature */
 #canvas-sign.movable {
   cursor: move;
 }
@@ -380,61 +544,13 @@ footer a {
 }
 
 .faq-item.open .faq-question {
-  color: #818cf8;
-  /* indigo-400 */
+  color: var(--brand-light);
 }
 
 .faq-item.open .faq-icon {
   transform: rotate(180deg);
 }
 
-/* Testimonial Card Styles */
-.testimonial-card {
-  background-color: #1f2937;
-  /* bg-gray-800 */
-  padding: 24px;
-  border-radius: 0.75rem;
-  /* rounded-xl */
-  border: 1px solid #374151;
-  /* border-gray-700 */
-  display: flex;
-  flex-direction: column;
-}
-
-.pill {
-  background-color: #374151;
-  /* bg-gray-700 */
-  color: #d1d5db;
-  /* text-gray-300 */
-  padding: 8px 16px;
-  border-radius: 9999px;
-  /* rounded-full */
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.pill {
-  background-color: #374151;
-  /* bg-gray-700 */
-  color: #d1d5db;
-  /* text-gray-300 */
-  /* Smaller padding and font size by default for mobile */
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 9999px;
-  /* rounded-full */
-  font-weight: 500;
-}
-
-/* On small screens (640px) and up, revert to the larger size */
-@media (min-width: 640px) {
-  .pill {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
-/* Ensure form-field-group contents don't overflow on small screens */
 .form-field-group .capitalize {
   word-break: break-all;
 }
@@ -448,7 +564,6 @@ footer a {
   .form-field-group {
     display: inline-block;
     width: 90%;
-    /* Adjust as needed */
     margin-right: 1rem;
   }
 }
@@ -464,7 +579,7 @@ footer a {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-primary);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -473,7 +588,7 @@ footer a {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
-  color: rgb(129 140 248);
+  color: var(--brand-light);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
@@ -481,7 +596,7 @@ footer a {
 .legal-content p {
   margin-bottom: 1rem;
   line-height: 1.625;
-  color: rgb(156 163 175);
+  color: var(--text-muted);
 }
 
 .legal-content ul {
@@ -489,16 +604,16 @@ footer a {
   list-style-position: inside;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  color: rgb(156 163 175);
+  color: var(--text-muted);
 }
 
 .legal-content a {
-  color: rgb(129 140 248);
+  color: var(--brand-light);
   text-decoration: underline;
 }
 
 .legal-content a:hover {
-  color: rgb(165 180 252);
+  color: var(--brand-lighter);
 }
 
 details>summary {
@@ -539,11 +654,11 @@ button:disabled,
   font-size: 0.75rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   line-height: 1;
-  color: #e5e7eb;
-  background-color: #374151;
-  border: 1px solid #4b5563;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-secondary);
   border-radius: 0.25rem;
-  box-shadow: 0 1px 0 0 #1f2937;
+  box-shadow: 0 1px 0 0 var(--bg-secondary);
 }
 
 .shortcut-input {
@@ -553,7 +668,7 @@ button:disabled,
 
 .shortcut-input:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: var(--brand-primary);
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
@@ -563,16 +678,16 @@ button:disabled,
 }
 
 #shortcuts-list::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: var(--bg-secondary);
 }
 
 #shortcuts-list::-webkit-scrollbar-thumb {
-  background: #4b5563;
+  background: var(--border-secondary);
   border-radius: 3px;
 }
 
 #shortcuts-list::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
+  background: var(--text-muted);
 }
 
 /* Scroll to Top Button Visibility */
@@ -595,14 +710,777 @@ button:disabled,
   pointer-events: none;
 }
 
+.light .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
 /* Hide spin buttons for number inputs */
 input[type="number"] {
   appearance: none;
-  -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* Chrome, Safari, Edge */
+  -webkit-appearance: none;
   margin: 0;
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+   ======================================== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--nav-hover);
+  color: var(--text-primary);
+}
+
+.theme-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Hide theme icons based on current theme */
+.dark .theme-toggle .sun-icon {
+  display: block;
+}
+
+.dark .theme-toggle .moon-icon {
+  display: none;
+}
+
+.light .theme-toggle .sun-icon {
+  display: none;
+}
+
+.light .theme-toggle .moon-icon {
+  display: block;
+}
+
+/* ========================================
+   LIGHT THEME SPECIFIC OVERRIDES
+   ======================================== */
+
+/* Text colors */
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+  color: var(--text-primary);
+}
+
+.light .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light .text-gray-100 {
+  color: #1f2937 !important;
+}
+
+.light .text-gray-200 {
+  color: #374151 !important;
+}
+
+.light .text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+.light .text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+.light .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+/* Background colors */
+.light .bg-gray-700 {
+  background-color: #e5e7eb !important;
+}
+
+.light .bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light .bg-gray-900 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.light .bg-gray-800\/40 {
+  background-color: rgba(243, 244, 246, 0.8) !important;
+}
+
+/* Border colors */
+.light .border-gray-600 {
+  border-color: var(--border-secondary) !important;
+}
+
+.light .border-gray-700 {
+  border-color: var(--border-primary) !important;
+}
+
+.light .border-gray-700\/50 {
+  border-color: rgba(209, 213, 219, 0.5) !important;
+}
+
+/* Navigation */
+.light nav {
+  background-color: var(--nav-bg) !important;
+  border-color: var(--border-primary) !important;
+}
+
+.light nav .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light #mobile-menu {
+  background-color: var(--nav-bg) !important;
+}
+
+/* Inputs and form elements */
+.light input,
+.light textarea,
+.light select {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.light #search-bar {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #111827 !important;
+}
+
+.light #search-bar::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Tool cards */
+.light .tool-card {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+.light .tool-card:hover {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .tool-card h3,
+.light .tool-card p {
+  color: var(--text-secondary) !important;
+}
+
+/* Category headers / text headings */
+.light .text-xl.font-bold,
+.light .text-lg.font-semibold,
+.light .font-bold.text-white {
+  color: var(--text-primary) !important;
+}
+
+/* Feature cards */
+.light .feature-card,
+.light .bg-gray-800.p-6 {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Pills and badges */
+.light .pill {
+  background-color: #e5e7eb !important;
+  color: #374151 !important;
+}
+
+/* Modals */
+.light .bg-black.bg-opacity-75,
+.light .bg-black\/70 {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.light #loader-modal>div,
+.light #alert-modal>div,
+.light #shortcuts-modal>div,
+.light #warning-modal>div {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Footer */
+.light footer {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light footer .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light footer .text-gray-400,
+.light footer .text-gray-500 {
+  color: var(--text-muted) !important;
+}
+
+/* Compliance section (if not hidden) */
+.light #security-compliance-section {
+  background-color: var(--bg-primary) !important;
+}
+
+/* FAQ section */
+.light .faq-item {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+.light .faq-question span {
+  color: var(--text-primary) !important;
+}
+
+.light .faq-answer p {
+  color: var(--text-muted) !important;
+}
+
+/* Testimonials */
+.light .testimonial-card {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Donation ribbon - keep original gradient styling */
+
+/* Hero section badges */
+.light .hero-badge,
+.light .inline-flex.items-center.gap-2.px-3.py-1\.5 {
+  background-color: rgba(243, 244, 246, 0.9) !important;
+  border-color: rgba(209, 213, 219, 0.8) !important;
+  color: #374151 !important;
+}
+
+/* Lucide icons in light mode */
+.light [data-lucide] {
+  color: var(--text-muted);
+}
+
+.light .text-indigo-400 [data-lucide],
+.light [data-lucide].text-indigo-400 {
+  color: #6366f1 !important;
+}
+
+/* Grid pattern for light mode */
+.light .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Primary button text should stay white */
+.light .bg-indigo-600,
+.light .bg-indigo-500,
+.light .btn-gradient {
+  color: #ffffff !important;
+}
+
+/* Settings modal tabs */
+.light #shortcuts-tab-btn,
+.light #preferences-tab-btn {
+  color: var(--text-secondary);
+}
+
+.light #shortcuts-tab-btn.bg-indigo-600,
+.light #preferences-tab-btn.bg-indigo-600 {
+  color: #ffffff !important;
+}
+
+/* Keyboard shortcut display */
+.light kbd {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+  color: #374151 !important;
+}
+
+/* ========================================
+   ADDITIONAL LIGHT THEME FIXES
+   ======================================== */
+
+/* Remove/soften blue vignette/glow effect in light mode */
+.light::before,
+.light::after,
+.light body::before,
+.light body::after {
+  opacity: 0.1 !important;
+}
+
+/* Soften any radial gradients that create the glow effect */
+.light [style*="radial-gradient"],
+.light .glow,
+.light .vignette {
+  opacity: 0.15 !important;
+}
+
+/* Hero section - reduce blue glow */
+.light #hero,
+.light .hero-section,
+.light section:first-of-type {
+  background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%) !important;
+}
+
+/* Fix low-contrast gray text */
+.light .text-gray-400 {
+  color: #4b5563 !important;
+  /* Darker gray for better contrast */
+}
+
+.light .text-gray-500 {
+  color: #374151 !important;
+}
+
+/* Search bar - better contrast */
+.light #search-bar,
+.light input[type="search"],
+.light input[type="text"] {
+  background-color: #ffffff !important;
+  border: 2px solid #d1d5db !important;
+  color: #111827 !important;
+}
+
+.light #search-bar::placeholder,
+.light input::placeholder {
+  color: #6b7280 !important;
+  /* More visible placeholder */
+}
+
+/* Shortcut key indicator (Ctrl+K) */
+.light .shortcut-key,
+.light kbd,
+.light [class*="kbd"] {
+  background-color: #e5e7eb !important;
+  border-color: #9ca3af !important;
+  color: #374151 !important;
+}
+
+/* Tool cards - add subtle shadow and better borders */
+.light .tool-card {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .tool-card:hover {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .tool-card p,
+.light .tool-card .text-gray-400 {
+  color: #4b5563 !important;
+}
+
+/* Feature badges - better visibility */
+.light .pill,
+.light .badge,
+.light [class*="badge"] {
+  background-color: #e0e7ff !important;
+  border: 1px solid #a5b4fc !important;
+  color: #3730a3 !important;
+}
+
+/* Navigation links - darker text */
+.light .nav-link,
+.light .mobile-nav-link {
+  color: #374151 !important;
+}
+
+.light .nav-link:hover,
+.light .mobile-nav-link:hover {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+/* Drop zone / file upload area */
+.light #drop-zone,
+.light .drop-zone,
+.light [class*="drop-zone"] {
+  background-color: #fafafa !important;
+  border: 2px dashed #9ca3af !important;
+}
+
+.light #drop-zone:hover,
+.light .drop-zone:hover {
+  background-color: #f0f0f0 !important;
+  border-color: var(--brand-primary) !important;
+}
+
+.light #drop-zone p,
+.light #drop-zone .text-gray-400,
+.light #drop-zone .text-gray-500 {
+  color: #4b5563 !important;
+}
+
+/* How It Works section text */
+.light .text-gray-400.text-sm,
+.light p.text-gray-400,
+.light .feature-card p {
+  color: #4b5563 !important;
+}
+
+/* FAQ section */
+.light details,
+.light .faq-item {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.light details summary,
+.light .faq-question {
+  color: #111827 !important;
+}
+
+.light details p,
+.light .faq-answer,
+.light .faq-answer p {
+  color: #4b5563 !important;
+}
+
+/* Related tools section */
+.light .bg-gray-800.p-4,
+.light a.block.bg-gray-800 {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.light .bg-gray-800.p-4:hover,
+.light a.block.bg-gray-800:hover {
+  background-color: #f9fafb !important;
+  border-color: var(--brand-primary) !important;
+}
+
+/* Footer - cleaner look */
+.light footer {
+  background-color: #f9fafb !important;
+  border-top-color: #e5e7eb !important;
+}
+
+.light footer h3 {
+  color: #111827 !important;
+}
+
+.light footer .text-gray-400,
+.light footer a {
+  color: #4b5563 !important;
+}
+
+.light footer a:hover {
+  color: var(--brand-primary) !important;
+}
+
+/* Remove bottom blue glow on footer */
+.light footer::after {
+  display: none !important;
+}
+
+/* Modal improvements */
+.light .modal,
+.light [role="dialog"],
+.light #loader-modal>div,
+.light #alert-modal>div {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* File list items */
+.light #file-list li,
+.light .file-item {
+  background-color: #f9fafb !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Merge options panel */
+.light #merge-options,
+.light .merge-options {
+  background-color: #ffffff !important;
+}
+
+.light #file-mode-panel,
+.light #page-mode-panel {
+  background-color: #ffffff !important;
+}
+
+.light #file-mode-panel .bg-gray-900,
+.light #page-mode-panel .bg-gray-900 {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+}
+
+/* Secondary buttons */
+.light .bg-gray-700 {
+  background-color: #e5e7eb !important;
+  color: #374151 !important;
+}
+
+.light .bg-gray-700:hover {
+  background-color: #d1d5db !important;
+}
+
+/* Step numbers in How It Works */
+.light .bg-indigo-600.rounded-full {
+  background-color: var(--brand-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Body background - pure white with subtle texture */
+.light body {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%) !important;
+}
+
+/* Ensure brand colors on buttons stay white text */
+.light .bg-indigo-600,
+.light .bg-indigo-700,
+.light .btn-gradient,
+.light button[class*="indigo"] {
+  color: #ffffff !important;
+}
+
+/* Section headers */
+.light h2.text-white,
+.light h3.text-white,
+.light .font-bold.text-white {
+  color: #111827 !important;
+}
+
+/* Tooltip and popover fixes */
+.light [role="tooltip"],
+.light .tooltip {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+/* ========================================
+   AGGRESSIVE LIGHT THEME FIXES - PART 2
+   ======================================== */
+
+/* Completely hide the bg-grid-pattern vignette in light mode */
+.light .bg-grid-pattern {
+  display: none !important;
+}
+
+/* Or if we want to keep it but remove the vignette effect */
+.light .bg-grid-pattern {
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  opacity: 0.5 !important;
+}
+
+/* Fix indigo badges to work in light mode */
+.light .bg-indigo-900 {
+  background-color: #e0e7ff !important;
+  border-color: #a5b4fc !important;
+}
+
+.light .text-indigo-300 {
+  color: #4338ca !important;
+}
+
+.light .border-indigo-400 {
+  border-color: #818cf8 !important;
+}
+
+.light .border-indigo-500\/30 {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+}
+
+.light .bg-indigo-900\/20 {
+  background-color: rgba(224, 231, 255, 0.8) !important;
+}
+
+/* Fix ALL text-gray variations for better contrast */
+.light [class*="text-gray-3"],
+.light [class*="text-gray-4"],
+.light [class*="text-gray-5"] {
+  color: #374151 !important;
+}
+
+/* Tool card text specifically */
+.light .tool-card span,
+.light .tool-card h3,
+.light .tool-card .text-sm {
+  color: #374151 !important;
+}
+
+/* Hero section fixes */
+.light #hero-section,
+.light section[id="hero-section"] {
+  background: #ffffff !important;
+}
+
+/* Category section headers */
+.light .text-xl.font-semibold,
+.light h3.text-xl {
+  color: #111827 !important;
+}
+
+/* Tool uploader/interface area */
+.light #tool-uploader,
+.light .tool-uploader,
+.light #uploader>div {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+}
+
+.light #uploader {
+  background-color: #f9fafb !important;
+}
+
+/* Back to Tools button */
+.light #back-to-tools,
+.light .back-to-tools {
+  color: #4338ca !important;
+}
+
+.light #back-to-tools:hover {
+  color: #6366f1 !important;
+}
+
+/* File controls area */
+.light #file-controls button {
+  background-color: #e5e7eb !important;
+  color: #374151 !important;
+  border-color: #d1d5db !important;
+}
+
+.light #file-controls button:first-child {
+  background-color: var(--brand-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Compliance section fix */
+.light #security-compliance-section {
+  background: #ffffff !important;
+}
+
+.light #security-compliance-section .bg-indigo-900 {
+  background-color: #e0e7ff !important;
+}
+
+/* Fix text colors in the compliance cards */
+.light .compliance-card,
+.light #security-compliance-section [class*="text-gray"] {
+  color: #374151 !important;
+}
+
+/* FAQ section text */
+.light .faq-section p,
+.light section.py-16 p {
+  color: #374151 !important;
+}
+
+/* How It Works section */
+.light .flex.items-start.gap-4 p {
+  color: #4b5563 !important;
+}
+
+/* All buttons should have proper contrast */
+.light button.bg-gray-700,
+.light .btn.bg-gray-700 {
+  background-color: #e5e7eb !important;
+  color: #1f2937 !important;
+}
+
+/* File mode/page mode buttons */
+.light #file-mode-btn:not(.bg-indigo-600),
+.light #page-mode-btn:not(.bg-indigo-600) {
+  background-color: transparent !important;
+  color: #374151 !important;
+}
+
+/* Instructions box in merge tools */
+.light .bg-gray-900.rounded-lg.border {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+}
+
+.light .bg-gray-900.rounded-lg.border p,
+.light .bg-gray-900.rounded-lg.border strong {
+  color: #374151 !important;
+}
+
+.light .bg-gray-900.rounded-lg.border li {
+  color: #4b5563 !important;
+}
+
+/* Page merge preview area */
+.light #page-merge-preview {
+  background-color: #f9fafb !important;
+  border-color: #d1d5db !important;
+}
+
+/* Ensure all body text is readable */
+.light body,
+.light main,
+.light #app {
+  color: #374151 !important;
+}
+
+/* White text on colored backgrounds should stay white */
+.light .bg-indigo-600 .text-white,
+.light .btn-gradient .text-white,
+.light .bg-indigo-600 span,
+.light .btn-gradient span {
+  color: #ffffff !important;
+}
+
+/* Lucide icons - ensure visibility */
+.light [data-lucide] {
+  color: #6b7280 !important;
+}
+
+.light .text-indigo-400 [data-lucide],
+.light [class*="indigo"] [data-lucide] {
+  color: #6366f1 !important;
+}
+
+/* Fix the footer more aggressively */
+.light footer,
+.light footer * {
+  background-color: #f9fafb !important;
+}
+
+.light footer a,
+.light footer p,
+.light footer li,
+.light footer span:not(.text-xl) {
+  color: #4b5563 !important;
+}
+
+.light footer h3 {
+  color: #111827 !important;
+}
+
+.light footer svg {
+  color: #6b7280 !important;
+}
+
+.light footer a:hover svg {
+  color: var(--brand-primary) !important;
 }

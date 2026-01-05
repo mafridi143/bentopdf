@@ -164,8 +164,6 @@
 
       </div>
     </section>
-    <div class="section-divider"></div>
-
     <section id="features-section" class="py-20">
       <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
         <span data-i18n="features.title"></span> <span class="marker-slanted"
@@ -451,8 +449,6 @@
       </div>
     </div>
 
-    <div class="section-divider hide-section mb-20 mt-10"></div>
-
     <!-- COMPLIANCE SECTION START -->
     <section id="security-compliance-section" class="py-20 hide-section">
       <div class="mb-8 text-center">
@@ -524,7 +520,6 @@
       </div>
     </section>
 
-    <!-- Scroll to Top Button -->
     <button id="scroll-to-top-btn"
       class="fixed bottom-12 right-8 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 translate-y-10 invisible z-40"
       aria-label="Scroll to top">
@@ -614,6 +609,7 @@
     </div>
   </footer>
 
+  <script type="module" src="src/js/utils/theme-manager.ts"></script>
   <script type="module" src="src/js/utils/lucide-init.ts"></script>
   <script type="module" src="src/version.ts"></script>
   <script type="module" src="src/js/main.ts"></script>
@@ -680,55 +676,6 @@
       "contactType": "Customer Support",
       "url": "https://www.zempdf.com/contact.html"
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is ZemPDF really free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, absolutely. All tools on ZemPDF are 100% free to use, with no file limits, no sign-ups, and no watermarks. We believe everyone deserves access to simple, powerful PDF tools without a paywall."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are my files secure? Where are they processed?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your files are as secure as possible because they never leave your computer. All processing happens directly in your web browser (client-side). We never upload your files to a server, so you maintain complete privacy and control over your documents."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does it work on Mac, Windows, and Mobile?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! Since ZemPDF runs entirely in your browser, it works on any operating system with a modern web browser, including Windows, macOS, Linux, iOS, and Android."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is ZemPDF GDPR compliant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. ZemPDF is fully GDPR compliant. Since all file processing happens locally in your browser and we never collect or transmit your files to any server, we have no access to your data. This ensures you are always in control of your documents."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you store or track any of my files?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We never store, track, or log your files. Everything you do on ZemPDF happens in your browser memory and disappears once you close the page. There are no uploads, no history logs, and no servers involved."
-        }
-      }
-    ]
   }
   </script>
 </body>
