@@ -34,7 +34,8 @@
     "docs:preview": "vitepress preview docs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "rebrand": "node scripts/zempdf/rebrand.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
