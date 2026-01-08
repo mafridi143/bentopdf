@@ -1,7 +1,14 @@
 // @ts-nocheck
 // TODO: @ALAM - remove ts-nocheck and fix types later, possibly convert this into an npm package
 
-import { PDFDocument, PDFName, PDFString, PDFNumber, PDFArray, PDFHexString } from 'pdf-lib';
+import {
+  PDFDocument,
+  PDFName,
+  PDFString,
+  PDFNumber,
+  PDFArray,
+  PDFHexString,
+} from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 import Sortable from 'sortablejs';
 import { createIcons, icons } from 'lucide';
@@ -9,8 +16,10 @@ import '../../css/bookmark.css';
 import { initializeGlobalShortcuts } from '../utils/shortcuts-init.js';
 import { truncateFilename, getPDFDocument } from '../utils/helpers.js';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
-
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url
+).toString();
 
 const modalContainer = document.getElementById('modal-container');
 
@@ -50,15 +59,14 @@ placeholder="${field.placeholder || ''}" />
     <label class="block text-sm font-medium text-gray-700 mb-2">${field.label}</label>
       <select id="modal-${field.name}" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
         ${field.options
-              .map(
-                (opt) => `
+          .map(
+            (opt) => `
                                         <option value="${opt.value}" ${defaultValues[field.name] === opt.value ? 'selected' : ''}>
                                             ${opt.label}
                                         </option>
                                     `
-              )
-              .join('')
-            }
+          )
+          .join('')}
 </select>
                                 ${field.name === 'color' ? '<input type="color" id="modal-color-picker" class="hidden w-full h-10 mt-2 rounded cursor-pointer border border-gray-300" value="#000000" />' : ''}
 </div>
@@ -657,9 +665,7 @@ const fileDisplayArea = document.getElementById(
 const backToToolsBtn = document.getElementById(
   'back-to-tools'
 ) as HTMLButtonElement;
-const closeBtn = document.getElementById(
-  'back-btn'
-) as HTMLButtonElement;
+const closeBtn = document.getElementById('back-btn') as HTMLButtonElement;
 const canvas = document.getElementById('pdf-canvas');
 const ctx = canvas.getContext('2d');
 const pageIndicator = document.getElementById('page-indicator');
@@ -771,8 +777,8 @@ let searchQuery = '';
 let csvBookmarks = null;
 let jsonBookmarks = null;
 let batchMode = false;
-let selectedBookmarks = new Set();
-let collapsedNodes = new Set();
+const selectedBookmarks = new Set();
+const collapsedNodes = new Set();
 
 const colorClasses = {
   red: 'bg-red-100 border-red-300',
@@ -1126,7 +1132,7 @@ async function renderPage(num, zoom = null, destX = null, destY = null) {
 
   const dpr = window.devicePixelRatio || 1;
 
-  let viewport = page.getViewport({ scale: zoomScale });
+  const viewport = page.getViewport({ scale: zoomScale });
   currentViewport = viewport;
 
   canvas.height = viewport.height * dpr;
