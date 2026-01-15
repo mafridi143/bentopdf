@@ -20,31 +20,6 @@ export type SupportedLanguage = (typeof supportedLanguages)[number];
 
 export const languageNames: Record<SupportedLanguage, string> = {
   en: 'English',
-<<<<<<< HEAD
-  de: 'Deutsch',
-  zh: '中文',
-  vi: 'Tiếng Việt',
-  tr: 'Türkçe',
-};
-
-export const getLanguageFromUrl = (): SupportedLanguage => {
-  const path = window.location.pathname;
-  const langMatch = path.match(/^\/(en|de|zh|vi|tr)(?:\/|$)/);
-  if (
-    langMatch &&
-    supportedLanguages.includes(langMatch[1] as SupportedLanguage)
-  ) {
-    return langMatch[1] as SupportedLanguage;
-  }
-  const storedLang = localStorage.getItem('i18nextLng');
-  if (
-    storedLang &&
-    supportedLanguages.includes(storedLang as SupportedLanguage)
-  ) {
-    return storedLang as SupportedLanguage;
-  }
-
-=======
   fr: 'Français',
   de: 'Deutsch',
   es: 'Español',
@@ -87,7 +62,6 @@ export const getLanguageFromUrl = (): SupportedLanguage => {
     return storedLang as SupportedLanguage;
   }
 
->>>>>>> upstream/main
   return 'en';
 };
 
@@ -130,21 +104,6 @@ export const t = (key: string, options?: Record<string, unknown>): string => {
 
 export const changeLanguage = (lang: SupportedLanguage): void => {
   if (!supportedLanguages.includes(lang)) return;
-<<<<<<< HEAD
-
-  const currentPath = window.location.pathname;
-  const currentLang = getLanguageFromUrl();
-
-  let newPath: string;
-  if (currentPath.match(/^\/(en|de|zh|vi|tr)\//)) {
-    newPath = currentPath.replace(/^\/(en|de|zh|vi|tr)\//, `/${lang}/`);
-  } else if (currentPath.match(/^\/(en|de|zh|vi|tr)$/)) {
-    newPath = `/${lang}`;
-  } else {
-    newPath = `/${lang}${currentPath}`;
-  }
-
-=======
   localStorage.setItem('i18nextLng', lang);
 
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -186,7 +145,6 @@ export const changeLanguage = (lang: SupportedLanguage): void => {
 
   newPath = newPath.replace(/\/+/g, '/');
 
->>>>>>> upstream/main
   const newUrl = newPath + window.location.search + window.location.hash;
   window.location.href = newUrl;
 };
@@ -230,37 +188,6 @@ export const rewriteLinks = (): void => {
   const currentLang = getLanguageFromUrl();
   if (currentLang === 'en') return;
 
-<<<<<<< HEAD
-  const links = document.querySelectorAll('a[href]');
-  links.forEach((link) => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    if (
-      href.startsWith('http') ||
-      href.startsWith('mailto:') ||
-      href.startsWith('tel:') ||
-      href.startsWith('#') ||
-      href.startsWith('javascript:')
-    ) {
-      return;
-    }
-
-    if (href.match(/^\/(en|de|zh|vi|tr|id)\//)) {
-      return;
-    }
-    let newHref: string;
-    if (href.startsWith('/')) {
-      newHref = `/${currentLang}${href}`;
-    } else if (href.startsWith('./')) {
-      newHref = href.replace('./', `/${currentLang}/`);
-    } else if (href === '/' || href === '') {
-      newHref = `/${currentLang}/`;
-    } else {
-      newHref = `/${currentLang}/${href}`;
-    }
-
-=======
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
   const links = document.querySelectorAll('a[href]');
 
@@ -312,7 +239,6 @@ export const rewriteLinks = (): void => {
 
     newHref = newHref.replace(/([^:])\/+/g, '$1/');
 
->>>>>>> upstream/main
     link.setAttribute('href', newHref);
   });
 };

@@ -426,60 +426,6 @@ function createField(type: FormField['type'], x: number, y: number): void {
 
 // Render field on canvas
 function renderField(field: FormField): void {
-<<<<<<< HEAD
-  const fieldWrapper = document.createElement('div');
-  fieldWrapper.id = field.id;
-  fieldWrapper.className = 'absolute cursor-move group'; // Added group for hover effects
-  fieldWrapper.style.left = field.x + 'px';
-  fieldWrapper.style.top = field.y + 'px';
-  fieldWrapper.style.width = field.width + 'px';
-  fieldWrapper.style.overflow = 'visible';
-  fieldWrapper.style.zIndex = '10'; // Ensure fields are above grid and PDF
-
-  // Create label - hidden by default, shown on group hover or selection
-  const label = document.createElement('div');
-  label.className =
-    'field-label absolute left-0 w-full text-xs font-semibold pointer-events-none select-none opacity-0 group-hover:opacity-100 transition-opacity';
-  label.style.bottom = '100%';
-  label.style.marginBottom = '4px';
-  label.style.color = '#374151';
-  label.style.fontSize = '11px';
-  label.style.lineHeight = '1';
-  label.style.whiteSpace = 'nowrap';
-  label.style.overflow = 'hidden';
-  label.style.textOverflow = 'ellipsis';
-  label.textContent = field.name;
-
-  // Create input container - light border by default, dashed on hover
-  const fieldContainer = document.createElement('div');
-  fieldContainer.className =
-    'field-container relative border-2 border-indigo-200 group-hover:border-dashed group-hover:border-indigo-300 bg-indigo-50/30 rounded transition-all';
-  fieldContainer.style.width = '100%';
-  fieldContainer.style.height = field.height + 'px';
-
-  // Create content based on type
-  const contentEl = document.createElement('div');
-  contentEl.className =
-    'field-content w-full h-full flex items-center justify-center overflow-hidden';
-
-  if (field.type === 'text') {
-    contentEl.className =
-      'field-text w-full h-full flex items-center px-2 text-sm overflow-hidden';
-    contentEl.style.fontSize = field.fontSize + 'px';
-    contentEl.style.textAlign = field.alignment;
-    contentEl.style.justifyContent =
-      field.alignment === 'left'
-        ? 'flex-start'
-        : field.alignment === 'right'
-          ? 'flex-end'
-          : 'center';
-    contentEl.style.color = field.textColor;
-    contentEl.style.whiteSpace = field.multiline ? 'pre-wrap' : 'nowrap';
-    contentEl.style.textOverflow = 'ellipsis';
-    contentEl.style.alignItems = field.multiline ? 'flex-start' : 'center';
-    contentEl.textContent = field.defaultValue;
-
-=======
   const existingField = document.getElementById(field.id);
   if (existingField) {
     existingField.remove();
@@ -537,7 +483,6 @@ function renderField(field: FormField): void {
     contentEl.style.alignItems = field.multiline ? 'flex-start' : 'center';
     contentEl.textContent = field.defaultValue;
 
->>>>>>> upstream/main
     // Apply combing visual if enabled
     if (field.combCells > 0) {
       contentEl.style.backgroundImage = `repeating-linear-gradient(90deg, transparent, transparent calc((100% / ${field.combCells}) - 1px), #e5e7eb calc((100% / ${field.combCells}) - 1px), #e5e7eb calc(100% / ${field.combCells}))`;
@@ -1103,17 +1048,6 @@ function showProperties(field: FormField): void {
         `;
   } else if (field.type === 'date') {
     const formats = [
-<<<<<<< HEAD
-      'mm/dd/yyyy',
-      'dd/mm/yyyy',
-      'mm/yy',
-      'dd/mm/yy',
-      'yyyy/mm/dd',
-      'mmm d, yyyy',
-      'd-mmm-yy',
-      'yy-mm-dd',
-    ];
-=======
       'm/d',
       'm/d/yy',
       'm/d/yyyy',
@@ -1147,16 +1081,12 @@ function showProperties(field: FormField): void {
       'yyyy',
     ];
     const isCustom = !formats.includes(field.dateFormat || 'mm/dd/yyyy');
->>>>>>> upstream/main
     specificProps = `
         <div>
             <label class="block text-xs font-semibold text-gray-300 mb-1">Date Format</label>
             <select id="propDateFormat" class="w-full bg-gray-600 border border-gray-500 text-white rounded px-2 py-1 text-sm focus:ring-indigo-500 focus:border-indigo-500">
                 ${formats.map((f) => `<option value="${f}" ${field.dateFormat === f ? 'selected' : ''}>${f}</option>`).join('')}
-<<<<<<< HEAD
-=======
                 <option value="custom" ${isCustom ? 'selected' : ''}>Custom</option>
->>>>>>> upstream/main
             </select>
         </div>
         <div id="customFormatContainer" class="${isCustom ? '' : 'hidden'} mt-2">
@@ -1739,12 +1669,6 @@ function showProperties(field: FormField): void {
     const propDateFormat = document.getElementById(
       'propDateFormat'
     ) as HTMLSelectElement;
-<<<<<<< HEAD
-    if (propDateFormat) {
-      propDateFormat.addEventListener('change', (e) => {
-        field.dateFormat = (e.target as HTMLSelectElement).value;
-        // Update canvas preview
-=======
     const customFormatContainer = document.getElementById(
       'customFormatContainer'
     ) as HTMLDivElement;
@@ -1837,7 +1761,6 @@ function showProperties(field: FormField): void {
           field.dateFormat = value;
         }
         updateExample();
->>>>>>> upstream/main
         const fieldWrapper = document.getElementById(field.id);
         if (fieldWrapper) {
           const textSpan = fieldWrapper.querySelector(
@@ -1847,12 +1770,6 @@ function showProperties(field: FormField): void {
             textSpan.textContent = field.dateFormat;
           }
         }
-<<<<<<< HEAD
-        // Re-initialize lucide icons in the properties panel
-        setTimeout(() => (window as any).lucide?.createIcons(), 0);
-      });
-    }
-=======
         setTimeout(() => (window as any).lucide?.createIcons(), 0);
       });
     }
@@ -1872,7 +1789,6 @@ function showProperties(field: FormField): void {
         }
       });
     }
->>>>>>> upstream/main
   } else if (field.type === 'image') {
     const propLabel = document.getElementById('propLabel') as HTMLInputElement;
     propLabel.addEventListener('input', (e) => {

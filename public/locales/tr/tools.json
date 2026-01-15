@@ -278,8 +278,6 @@
   "changePermissions": {
     "name": "İzinleri Değiştir",
     "subtitle": "Bir PDF üzerindeki kullanıcı izinlerini ayarlayın veya değiştirin."
-<<<<<<< HEAD
-=======
   },
   "emailToPdf": {
     "name": "E-posta'dan PDF'ye",
@@ -509,6 +507,5 @@
     "name": "Validate PDF Signature",
     "pageTitle": "Validate PDF Signature - Verify Digital Signatures | BentoPDF",
     "subtitle": "Verify digital signatures in your PDF files. Check certificate validity, view signer details, and confirm document integrity. All processing happens in your browser."
->>>>>>> upstream/main
   }
 }

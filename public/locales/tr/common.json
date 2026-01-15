@@ -8,13 +8,10 @@
     "openMainMenu": "Ana menüyü aç",
     "language": "Dil"
   },
-<<<<<<< HEAD
-=======
   "donation": {
     "message": "BentoPDF'i seviyor musunuz? Ücretsiz ve açık kaynaklı kalmasına yardımcı olun!",
     "button": "Bağış Yap"
   },
->>>>>>> upstream/main
   "hero": {
     "title": " ",
     "pdfToolkit": "PDF Toolkit",
@@ -29,11 +26,7 @@
   },
   "features": {
     "title": "Neden",
-<<<<<<< HEAD
-    "bentoPdf": "ZemPDF'yi seçmelisiniz?",
-=======
     "bentoPdf": "BentoPDF'yi seçmelisiniz?",
->>>>>>> upstream/main
     "noSignup": {
       "title": "Kayıt Gerekmez",
       "description": "Hemen başlayın, hesap veya e-posta gerekmez."
@@ -64,12 +57,8 @@
     "toolsLabel": "Başlayın",
     "subtitle": "Dosya yükleyiciyi açmak için bir araç seçin",
     "searchPlaceholder": "Bir araç arayın (örn. 'böl', 'düzenle'...)",
-<<<<<<< HEAD
-    "backToTools": "Araçlara Dön"
-=======
     "backToTools": "Araçlara Dön",
     "firstLoadNotice": "Dönüştürme motorumuzu indirirken ilk yükleme biraz zaman alır. Sonrasında tüm yüklemeler anında gerçekleşir."
->>>>>>> upstream/main
   },
   "upload": {
     "clickToSelect": "Dosya seçmek için tıklayın",
@@ -151,13 +140,8 @@
     "title": "Sıkça Sorulan",
     "questions": "Sorular",
     "isFree": {
-<<<<<<< HEAD
-      "question": "ZemPDF gerçekten ücretsiz mi?",
-      "answer": "Evet, kesinlikle. ZemPDF'deki tüm araçlar %100 ücretsizdir, dosya sınırı yoktur, kayıt gerekmez ve filigran eklenmez. Herkesin ödeme duvarı olmadan basit, güçlü PDF araçlarına erişimi hak ettiğine inanıyoruz."
-=======
       "question": "BentoPDF gerçekten ücretsiz mi?",
       "answer": "Evet, kesinlikle. BentoPDF'deki tüm araçlar %100 ücretsizdir, dosya sınırı yoktur, kayıt gerekmez ve filigran eklenmez. Herkesin ödeme duvarı olmadan basit, güçlü PDF araçlarına erişimi hak ettiğine inanıyoruz."
->>>>>>> upstream/main
     },
     "areFilesSecure": {
       "question": "Dosyalarım güvende mi? Nerede işleniyorlar?",
@@ -165,29 +149,6 @@
     },
     "platforms": {
       "question": "Mac, Windows ve Mobil'de çalışıyor mu?",
-<<<<<<< HEAD
-      "answer": "Evet! ZemPDF tamamen tarayıcınızda çalıştığı için, Windows, macOS, Linux, iOS ve Android dahil modern bir web tarayıcısı olan herhangi bir işletim sisteminde çalışır."
-    },
-    "gdprCompliant": {
-      "question": "ZemPDF GDPR uyumlu mu?",
-      "answer": "Evet. ZemPDF tamamen GDPR uyumludur. Tüm dosya işlemleri tarayıcınızda yerel olarak gerçekleştiği ve dosyalarınızı herhangi bir sunucuya asla iletmediğimiz için verilerinize erişimimiz yoktur. Bu, belgeleriniz üzerindeki kontrolün her zaman sizde olduğundan emin olur."
-    },
-    "dataStorage": {
-      "question": "Dosyalarımı saklıyor veya takip ediyor musunuz?",
-      "answer": "Hayır. Dosyalarınızı asla saklamıyor, takip etmiyor veya kaydetmiyoruz. ZemPDF'de yaptığınız her şey tarayıcı belleğinizde gerçekleşir ve sayfayı kapattığınızda silinir. Yükleme, geçmiş kaydı veya sunucu yoktur."
-    },
-    "different": {
-      "question": "ZemPDF'yi diğer PDF araçlarından farklı kılan nedir?",
-      "answer": "Çoğu PDF aracı, işlem için dosyalarınızı bir sunucuya yükler. ZemPDF asla böyle yapmaz. Dosyalarınızı doğrudan tarayıcınızda işlemek için güvenli, modern web teknolojileri kullanırız. Bu, daha hızlı performans, daha güçlü gizlilik ve tam bir gönül rahatlığı anlamına gelir."
-    },
-    "browserBased": {
-      "question": "Tarayıcı tabanlı işlem beni nasıl korur?",
-      "answer": "Tamamen tarayıcınızın içinde çalışarak, ZemPDF dosyalarınızın cihazınızı asla terk etmemesini sağlar. Bu, sunucu saldırıları, veri ihlalleri veya yetkisiz erişim risklerini ortadan kaldırır. Dosyalarınız her zaman sizin kalır."
-    },
-    "analytics": {
-      "question": "Beni takip etmek için çerez veya analiz kullanıyor musunuz?",
-      "answer": "Gizliliğinizi önemsiyoruz. ZemPDF kişisel bilgileri takip etmez. Sadece anonim ziyaretçi sayılarını görmek için Simple Analytics kullanıyoruz. Bu, sitemizi kaç kişinin ziyaret ettiğini görebileceğimiz, ancak kim olduğunuzu asla bilemeyeceğimiz anlamına gelir. Simple Analytics tamamen GDPR uyumludur ve gizliliğinize saygı gösterir."
-=======
       "answer": "Evet! BentoPDF tamamen tarayıcınızda çalıştığı için, Windows, macOS, Linux, iOS ve Android dahil modern bir web tarayıcısı olan herhangi bir işletim sisteminde çalışır."
     },
     "gdprCompliant": {
@@ -209,7 +170,6 @@
     "analytics": {
       "question": "Beni takip etmek için çerez veya analiz kullanıyor musunuz?",
       "answer": "Gizliliğinizi önemsiyoruz. BentoPDF kişisel bilgileri takip etmez. Sadece anonim ziyaretçi sayılarını görmek için Simple Analytics kullanıyoruz. Bu, sitemizi kaç kişinin ziyaret ettiğini görebileceğimiz, ancak kim olduğunuzu asla bilemeyeceğimiz anlamına gelir. Simple Analytics tamamen GDPR uyumludur ve gizliliğinize saygı gösterir."
->>>>>>> upstream/main
     }
   },
   "testimonials": {
@@ -219,19 +179,11 @@
   },
   "support": {
     "title": "Çalışmamı Beğendiniz mi?",
-<<<<<<< HEAD
-    "description": "ZemPDF, herkes için ücretsiz, özel ve güçlü bir PDF araç seti sağlamak amacıyla oluşturulmuş bir tutku projesidir. Faydalı bulduysanız, geliştirilmesini desteklemeyi düşünebilirsiniz. Her kahve yardımcı olur!",
-    "buyMeCoffee": "Bana Kahve Ismarla"
-  },
-  "footer": {
-    "copyright": "© 2026 ZemPDF. Tüm hakları saklıdır.",
-=======
     "description": "BentoPDF, herkes için ücretsiz, özel ve güçlü bir PDF araç seti sağlamak amacıyla oluşturulmuş bir tutku projesidir. Faydalı bulduysanız, geliştirilmesini desteklemeyi düşünebilirsiniz. Her kahve yardımcı olur!",
     "buyMeCoffee": "Bana Kahve Ismarla"
   },
   "footer": {
     "copyright": "© 2026 BentoPDF. Tüm hakları saklıdır.",
->>>>>>> upstream/main
     "version": "Sürüm",
     "company": "Şirket",
     "aboutUs": "Hakkımızda",
@@ -289,15 +241,9 @@
     "philosophy": {
       "label": "Temel Felsefemiz",
       "title": "Öncelik Her Zaman Gizlilik.",
-<<<<<<< HEAD
-      "description": "Verinin bir meta olarak kabul edildiği bir çağda, farklı bir yaklaşım benimsiyoruz. Zempdf araçları için tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Bu, dosyalarınızın sunucularımıza asla dokunmadığı, belgelerinizi asla görmediğimiz ve ne yaptığınızı takip etmediğimiz anlamına gelir. Belgeleriniz tamamen ve kesinlikle özel kalır. Bu sadece bir özellik değil, temelimizdir."
-    },
-    "whyZempdf": {
-=======
       "description": "Verinin bir meta olarak kabul edildiği bir çağda, farklı bir yaklaşım benimsiyoruz. Bentopdf araçları için tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Bu, dosyalarınızın sunucularımıza asla dokunmadığı, belgelerinizi asla görmediğimiz ve ne yaptığınızı takip etmediğimiz anlamına gelir. Belgeleriniz tamamen ve kesinlikle özel kalır. Bu sadece bir özellik değil, temelimizdir."
     },
     "whyBentopdf": {
->>>>>>> upstream/main
       "title": "Neden",
       "speed": {
         "title": "Hız İçin Tasarlandı",
@@ -318,11 +264,7 @@
     },
     "cta": {
       "title": "Başlamaya hazır mısınız?",
-<<<<<<< HEAD
-      "description": "Günlük belge ihtiyaçları için ZemPDF'ye güvenen binlerce kullanıcıya katılın. Gizlilik ve performansın yaratabileceği farkı deneyimleyin.",
-=======
       "description": "Günlük belge ihtiyaçları için BentoPDF'ye güvenen binlerce kullanıcıya katılın. Gizlilik ve performansın yaratabileceği farkı deneyimleyin.",
->>>>>>> upstream/main
       "button": "Tüm Araçları Keşfet"
     }
   },

@@ -1,18 +1,4 @@
-<<<<<<< HEAD
-// @ts-nocheck
-// TODO: @ALAM - remove ts-nocheck and fix types later, possibly convert this into an npm package
-
-import {
-  PDFDocument,
-  PDFName,
-  PDFString,
-  PDFNumber,
-  PDFArray,
-  PDFHexString,
-} from 'pdf-lib';
-=======
 import { PDFDocument, PDFName, PDFNumber, PDFHexString, PDFRef } from 'pdf-lib';
->>>>>>> upstream/main
 import * as pdfjsLib from 'pdfjs-dist';
 import { PDFDocumentProxy, PageViewport } from 'pdfjs-dist';
 import Sortable from 'sortablejs';
@@ -49,13 +35,10 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
   import.meta.url
 ).toString();
-<<<<<<< HEAD
-=======
 
 const modalContainer = document.getElementById(
   'modal-container'
 ) as HTMLElement | null;
->>>>>>> upstream/main
 
 let isPickingDestination = false;
 let currentPickingCallback: DestinationCallback | null = null;
@@ -913,75 +896,7 @@ function showAlertModal(title: string, message: string): Promise<boolean> {
   });
 }
 
-<<<<<<< HEAD
-const fileInput = document.getElementById('file-input');
-const csvInput = document.getElementById('csv-input');
-const jsonInput = document.getElementById('json-input');
-const autoExtractCheckbox = document.getElementById('auto-extract-checkbox');
-const appEl = document.getElementById('app');
-const uploaderEl = document.getElementById('uploader');
-const fileDisplayArea = document.getElementById(
-  'file-display-area'
-) as HTMLElement;
-const backToToolsBtn = document.getElementById(
-  'back-to-tools'
-) as HTMLButtonElement;
-const closeBtn = document.getElementById('back-btn') as HTMLButtonElement;
-const canvas = document.getElementById('pdf-canvas');
-const ctx = canvas.getContext('2d');
-const pageIndicator = document.getElementById('page-indicator');
-const prevPageBtn = document.getElementById('prev-page');
-const nextPageBtn = document.getElementById('next-page');
-const gotoPageInput = document.getElementById('goto-page');
-const gotoBtn = document.getElementById('goto-btn');
-const zoomInBtn = document.getElementById('zoom-in-btn');
-const zoomOutBtn = document.getElementById('zoom-out-btn');
-const zoomFitBtn = document.getElementById('zoom-fit-btn');
-const zoomIndicator = document.getElementById('zoom-indicator');
-const addTopLevelBtn = document.getElementById('add-top-level-btn');
-const titleInput = document.getElementById('bookmark-title');
-const treeList = document.getElementById('bookmark-tree-list');
-const noBookmarksEl = document.getElementById('no-bookmarks');
-const downloadBtn = document.getElementById('download-btn');
-const undoBtn = document.getElementById('undo-btn');
-const redoBtn = document.getElementById('redo-btn');
-const resetBtn = document.getElementById('reset-btn');
-const deleteAllBtn = document.getElementById('delete-all-btn');
-const searchInput = document.getElementById('search-bookmarks');
-const importDropdownBtn = document.getElementById('import-dropdown-btn');
-const exportDropdownBtn = document.getElementById('export-dropdown-btn');
-const importDropdown = document.getElementById('import-dropdown');
-const exportDropdown = document.getElementById('export-dropdown');
-const importCsvBtn = document.getElementById('import-csv-btn');
-const exportCsvBtn = document.getElementById('export-csv-btn');
-const importJsonBtn = document.getElementById('import-json-btn');
-const exportJsonBtn = document.getElementById('export-json-btn');
-const csvImportHidden = document.getElementById('csv-import-hidden');
-const jsonImportHidden = document.getElementById('json-import-hidden');
-const extractExistingBtn = document.getElementById('extract-existing-btn');
-const currentPageDisplay = document.getElementById('current-page-display');
-const filenameDisplay = document.getElementById('filename-display');
-const batchModeCheckbox = document.getElementById('batch-mode-checkbox');
-const batchOperations = document.getElementById('batch-operations');
-const selectedCountDisplay = document.getElementById('selected-count');
-const batchColorSelect = document.getElementById('batch-color-select');
-const batchStyleSelect = document.getElementById('batch-style-select');
-const batchDeleteBtn = document.getElementById('batch-delete-btn');
-const selectAllBtn = document.getElementById('select-all-btn');
-const deselectAllBtn = document.getElementById('deselect-all-btn');
-const expandAllBtn = document.getElementById('expand-all-btn');
-const collapseAllBtn = document.getElementById('collapse-all-btn');
-
-const showViewerBtn = document.getElementById('show-viewer-btn');
-const showBookmarksBtn = document.getElementById('show-bookmarks-btn');
-const viewerSection = document.getElementById('viewer-section');
-const bookmarksSection = document.getElementById('bookmarks-section');
-
-// Handle responsive view switching
-function handleResize() {
-=======
 function handleResize(): void {
->>>>>>> upstream/main
   if (window.innerWidth >= 1024) {
     viewerSection?.classList.remove('hidden');
     bookmarksSection?.classList.remove('hidden');
