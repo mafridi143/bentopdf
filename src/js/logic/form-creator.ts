@@ -426,6 +426,7 @@ function createField(type: FormField['type'], x: number, y: number): void {
 
 // Render field on canvas
 function renderField(field: FormField): void {
+<<<<<<< HEAD
   const fieldWrapper = document.createElement('div');
   fieldWrapper.id = field.id;
   fieldWrapper.className = 'absolute cursor-move group'; // Added group for hover effects
@@ -478,6 +479,65 @@ function renderField(field: FormField): void {
     contentEl.style.alignItems = field.multiline ? 'flex-start' : 'center';
     contentEl.textContent = field.defaultValue;
 
+=======
+  const existingField = document.getElementById(field.id);
+  if (existingField) {
+    existingField.remove();
+  }
+
+  const fieldWrapper = document.createElement('div');
+  fieldWrapper.id = field.id;
+  fieldWrapper.className = 'absolute cursor-move group'; // Added group for hover effects
+  fieldWrapper.style.left = field.x + 'px';
+  fieldWrapper.style.top = field.y + 'px';
+  fieldWrapper.style.width = field.width + 'px';
+  fieldWrapper.style.overflow = 'visible';
+  fieldWrapper.style.zIndex = '10'; // Ensure fields are above grid and PDF
+
+  // Create label - hidden by default, shown on group hover or selection
+  const label = document.createElement('div');
+  label.className =
+    'field-label absolute left-0 w-full text-xs font-semibold pointer-events-none select-none opacity-0 group-hover:opacity-100 transition-opacity';
+  label.style.bottom = '100%';
+  label.style.marginBottom = '4px';
+  label.style.color = '#374151';
+  label.style.fontSize = '11px';
+  label.style.lineHeight = '1';
+  label.style.whiteSpace = 'nowrap';
+  label.style.overflow = 'hidden';
+  label.style.textOverflow = 'ellipsis';
+  label.textContent = field.name;
+
+  // Create input container - light border by default, dashed on hover
+  const fieldContainer = document.createElement('div');
+  fieldContainer.className =
+    'field-container relative border-2 border-indigo-200 group-hover:border-dashed group-hover:border-indigo-300 bg-indigo-50/30 rounded transition-all';
+  fieldContainer.style.width = '100%';
+  fieldContainer.style.height = field.height + 'px';
+
+  // Create content based on type
+  const contentEl = document.createElement('div');
+  contentEl.className =
+    'field-content w-full h-full flex items-center justify-center overflow-hidden';
+
+  if (field.type === 'text') {
+    contentEl.className =
+      'field-text w-full h-full flex items-center px-2 text-sm overflow-hidden';
+    contentEl.style.fontSize = field.fontSize + 'px';
+    contentEl.style.textAlign = field.alignment;
+    contentEl.style.justifyContent =
+      field.alignment === 'left'
+        ? 'flex-start'
+        : field.alignment === 'right'
+          ? 'flex-end'
+          : 'center';
+    contentEl.style.color = field.textColor;
+    contentEl.style.whiteSpace = field.multiline ? 'pre-wrap' : 'nowrap';
+    contentEl.style.textOverflow = 'ellipsis';
+    contentEl.style.alignItems = field.multiline ? 'flex-start' : 'center';
+    contentEl.textContent = field.defaultValue;
+
+>>>>>>> upstream/main
     // Apply combing visual if enabled
     if (field.combCells > 0) {
       contentEl.style.backgroundImage = `repeating-linear-gradient(90deg, transparent, transparent calc((100% / ${field.combCells}) - 1px), #e5e7eb calc((100% / ${field.combCells}) - 1px), #e5e7eb calc(100% / ${field.combCells}))`;
@@ -1043,6 +1103,7 @@ function showProperties(field: FormField): void {
         `;
   } else if (field.type === 'date') {
     const formats = [
+<<<<<<< HEAD
       'mm/dd/yyyy',
       'dd/mm/yyyy',
       'mm/yy',
@@ -1052,20 +1113,64 @@ function showProperties(field: FormField): void {
       'd-mmm-yy',
       'yy-mm-dd',
     ];
+=======
+      'm/d',
+      'm/d/yy',
+      'm/d/yyyy',
+      'mm/dd/yy',
+      'mm/dd/yyyy',
+      'mm/yy',
+      'mm/yyyy',
+      'd-mmm',
+      'd-mmm-yy',
+      'd-mmm-yyyy',
+      'dd-mmm-yy',
+      'dd-mmm-yyyy',
+      'yy-mm-dd',
+      'yyyy-mm-dd',
+      'mmm-yy',
+      'mmm-yyyy',
+      'mmm d, yyyy',
+      'mmmm-yy',
+      'mmmm-yyyy',
+      'mmmm d, yyyy',
+      'dd/mm/yy',
+      'dd/mm/yyyy',
+      'yyyy/mm/dd',
+      'dd.mm.yy',
+      'dd.mm.yyyy',
+      'm/d/yy h:MM tt',
+      'm/d/yyyy h:MM tt',
+      'm/d/yy HH:MM',
+      'm/d/yyyy HH:MM',
+      'yyyy-mm',
+      'yyyy',
+    ];
+    const isCustom = !formats.includes(field.dateFormat || 'mm/dd/yyyy');
+>>>>>>> upstream/main
     specificProps = `
         <div>
             <label class="block text-xs font-semibold text-gray-300 mb-1">Date Format</label>
             <select id="propDateFormat" class="w-full bg-gray-600 border border-gray-500 text-white rounded px-2 py-1 text-sm focus:ring-indigo-500 focus:border-indigo-500">
                 ${formats.map((f) => `<option value="${f}" ${field.dateFormat === f ? 'selected' : ''}>${f}</option>`).join('')}
+<<<<<<< HEAD
+=======
+                <option value="custom" ${isCustom ? 'selected' : ''}>Custom</option>
+>>>>>>> upstream/main
             </select>
         </div>
-        <div class="text-xs text-gray-400 italic mt-2">
-            The selected format will be enforced when the user types or picks a date.
+        <div id="customFormatContainer" class="${isCustom ? '' : 'hidden'} mt-2">
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Custom Format</label>
+            <input type="text" id="propCustomFormat" value="${isCustom ? field.dateFormat : ''}" placeholder="e.g. dd/mm/yyyy HH:MM:ss" class="w-full bg-gray-600 border border-gray-500 text-white rounded px-2 py-1 text-sm focus:ring-indigo-500 focus:border-indigo-500">
+        </div>
+        <div class="mt-3 p-2 bg-gray-700 rounded">
+            <span class="text-xs text-gray-400">Example of current format:</span>
+            <span id="dateFormatExample" class="text-sm text-white font-medium ml-2"></span>
         </div>
         <div class="bg-blue-900/30 border border-blue-700/50 rounded p-2 mt-2">
-            <p class="text-xs text-blue-200 flex gap-2">
-                <i data-lucide="info" class="w-4 h-4 flex-shrink-0"></i>
-                <span><strong>Browser Note:</strong> Firefox and Chrome may show their native date picker format during selection. The correct format will apply when you finish entering the date. This is normal browser behavior and not an issue.</span>
+            <p class="text-xs text-blue-200">
+                <i data-lucide="info" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                <span><strong>Browser Note:</strong> Firefox and Chrome may show their native date picker format during selection. The correct format will apply when you finish entering the date.</span>
             </p>
         </div>
         `;
@@ -1634,10 +1739,105 @@ function showProperties(field: FormField): void {
     const propDateFormat = document.getElementById(
       'propDateFormat'
     ) as HTMLSelectElement;
+<<<<<<< HEAD
     if (propDateFormat) {
       propDateFormat.addEventListener('change', (e) => {
         field.dateFormat = (e.target as HTMLSelectElement).value;
         // Update canvas preview
+=======
+    const customFormatContainer = document.getElementById(
+      'customFormatContainer'
+    ) as HTMLDivElement;
+    const propCustomFormat = document.getElementById(
+      'propCustomFormat'
+    ) as HTMLInputElement;
+    const dateFormatExample = document.getElementById(
+      'dateFormatExample'
+    ) as HTMLSpanElement;
+
+    const formatDateExample = (format: string): string => {
+      const now = new Date();
+      const d = now.getDate();
+      const dd = d.toString().padStart(2, '0');
+      const m = now.getMonth() + 1;
+      const mm = m.toString().padStart(2, '0');
+      const yy = now.getFullYear().toString().slice(-2);
+      const yyyy = now.getFullYear().toString();
+      const h = now.getHours() % 12 || 12;
+      const HH = now.getHours().toString().padStart(2, '0');
+      const MM = now.getMinutes().toString().padStart(2, '0');
+      const tt = now.getHours() >= 12 ? 'PM' : 'AM';
+      const monthNames = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ];
+      const monthNamesFull = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+      const mmm = monthNames[now.getMonth()];
+      const mmmm = monthNamesFull[now.getMonth()];
+
+      return format
+        .replace(/mmmm/g, mmmm)
+        .replace(/mmm/g, mmm)
+        .replace(/mm/g, mm)
+        .replace(/m/g, m.toString())
+        .replace(/dddd/g, dd)
+        .replace(/dd/g, dd)
+        .replace(/d/g, d.toString())
+        .replace(/yyyy/g, yyyy)
+        .replace(/yy/g, yy)
+        .replace(/HH/g, HH)
+        .replace(/h/g, h.toString())
+        .replace(/MM/g, MM)
+        .replace(/tt/g, tt);
+    };
+
+    const updateExample = () => {
+      if (dateFormatExample) {
+        dateFormatExample.textContent = formatDateExample(
+          field.dateFormat || 'mm/dd/yyyy'
+        );
+      }
+    };
+
+    updateExample();
+
+    if (propDateFormat) {
+      propDateFormat.addEventListener('change', (e) => {
+        const value = (e.target as HTMLSelectElement).value;
+        if (value === 'custom') {
+          customFormatContainer?.classList.remove('hidden');
+          if (propCustomFormat && propCustomFormat.value) {
+            field.dateFormat = propCustomFormat.value;
+          }
+        } else {
+          customFormatContainer?.classList.add('hidden');
+          field.dateFormat = value;
+        }
+        updateExample();
+>>>>>>> upstream/main
         const fieldWrapper = document.getElementById(field.id);
         if (fieldWrapper) {
           const textSpan = fieldWrapper.querySelector(
@@ -1647,10 +1847,32 @@ function showProperties(field: FormField): void {
             textSpan.textContent = field.dateFormat;
           }
         }
+<<<<<<< HEAD
         // Re-initialize lucide icons in the properties panel
         setTimeout(() => (window as any).lucide?.createIcons(), 0);
       });
     }
+=======
+        setTimeout(() => (window as any).lucide?.createIcons(), 0);
+      });
+    }
+
+    if (propCustomFormat) {
+      propCustomFormat.addEventListener('input', (e) => {
+        field.dateFormat = (e.target as HTMLInputElement).value || 'mm/dd/yyyy';
+        updateExample();
+        const fieldWrapper = document.getElementById(field.id);
+        if (fieldWrapper) {
+          const textSpan = fieldWrapper.querySelector(
+            '.date-format-text'
+          ) as HTMLElement;
+          if (textSpan) {
+            textSpan.textContent = field.dateFormat;
+          }
+        }
+      });
+    }
+>>>>>>> upstream/main
   } else if (field.type === 'image') {
     const propLabel = document.getElementById('propLabel') as HTMLInputElement;
     propLabel.addEventListener('input', (e) => {

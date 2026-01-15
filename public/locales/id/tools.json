@@ -515,5 +515,19 @@
     "name": "Validasi Tanda Tangan PDF",
     "pageTitle": "Validasi Tanda Tangan PDF - Verifikasi Tanda Tangan Digital | ZemPDF",
     "subtitle": "Verifikasi tanda tangan digital di file PDF Anda. Periksa validitas sertifikat, lihat detail penandatangan, dan konfirmasi integritas dokumen. Semua pemrosesan terjadi di browser Anda."
+  },
+  "emailToPdf": {
+    "name": "Email ke PDF",
+    "subtitle": "Konversi file email (EML, MSG) ke format PDF. Mendukung ekspor Outlook dan format email standar.",
+    "acceptedFormats": "File EML, MSG",
+    "convertButton": "Konversi ke PDF"
+  },
+  "fontToOutline": {
+    "name": "Font ke Garis Tepi",
+    "subtitle": "Konversi semua font ke garis tepi vektor untuk tampilan konsisten di semua perangkat."
+  },
+  "deskewPdf": {
+    "name": "Luruskan PDF",
+    "subtitle": "Otomatis meluruskan halaman hasil pindai yang miring menggunakan OpenCV."
   }
 }

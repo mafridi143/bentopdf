@@ -183,7 +183,11 @@
     "buyMeCoffee": "Beli Kopi untuk Saya"
   },
   "footer": {
+<<<<<<< HEAD
     "copyright": "© 2026 ZemPDF. Hak cipta dilindungi.",
+=======
+    "copyright": "© 2026 BentoPDF. Hak cipta dilindungi.",
+>>>>>>> upstream/main
     "version": "Versi",
     "company": "Perusahaan",
     "aboutUs": "Tentang Kami",
